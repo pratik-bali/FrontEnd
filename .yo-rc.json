@@ -1,0 +1,19 @@
+{
+  "generator-jhipster": {
+    "jhipsterVersion": "4.14.3",
+    "baseName": "Buckswise_Front_End",
+    "clientFramework": "angularX",
+    "useSass": false,
+    "clientPackageManager": "yarn",
+    "authenticationType": "jwt",
+    "cacheProvider": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "sql",
+    "prodDatabaseType": "sql",
+    "applicationType": "monolith",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "enableTranslation": false,
+    "skipServer": true
+  }
+}
