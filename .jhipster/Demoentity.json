@@ -1,0 +1,20 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "username",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "password",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180521120247",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "demoentity",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no"
+}

@@ -1,0 +1,222 @@
+.topbar
+{  margin-top: -7px;    top: 1%;  opacity: 1;  transition: all 700ms ease;  right: 0;  left: 0;  background: #fff;  -webkit-box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);  z-index: 5;  line-height: 50px;  font-size: 0.75em;  font-weight: 500;  vertical-align: middle;
+
+}
+.header
+{  margin-right: -10px; margin-left: 130px; padding-right: 0px; padding-left: 0px; width: 80%; height: 51px;
+}
+.cust-nav
+{margin-top: 0px;   height: 50px; background: #fff;
+}
+.dropdown-desktop
+{  position: absolute; top: 60px;  max-width: 700px;  list-style-type: none;  visibility: hidden;  opacity: 0;  line-height: 1.15;  transition: all 300ms ease;
+}
+.btn-top
+{position: absolute; right: 20px;
+}
+.btn-c
+{  color: #069fd7;  font-weight: 600;  padding: 5px 10px;  border-radius: 5px;  transition: all 0.3s ease;
+}
+.btn-c:hover
+{  cursor: pointer;  color: #057fac;
+}
+
+.hideAll
+{display: block; position: fixed; left: 0px; right: 0px; top: 0px; bottom: 0px; z-index: 4;
+}
+.loader
+{  color: #069fd7;  text-indent: -9999em;  margin: 88px auto;  position: relative;  top: 40%;  font-size: 11px;-webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);  transform: translateZ(0);  -webkit-animation-delay: -0.16s;  animation-delay: -0.16s;
+}
+.loading
+{  color: #069fd7;  font-size: 1em;  position: absolute;  text-align: center;  top: 60%;  left: 0;right: 0;
+}
+.sticky-signup
+{  transition: all 700ms ease, opacity 300ms ease;  position: fixed;  bottom: 30px;  left: 500px;  right: 0;  z-index: 5;
+}
+.signup-login
+{ background: #fff; color: #069fd7; box-sizing: border-box;width: 250px; position: absolute; bottom: 0; left: 0; right: 0; line-height: 45px;
+  text-align: center; border-radius: 4px; transition: all 700ms ease, opacity 300ms ease;
+  /* -webkit-box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.26); */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.26);
+}
+.signup-btn
+{ background: #fff; border-radius: 4px 0 0 4px; float: left; width: 50%; cursor: pointer; transition: all 300ms ease;
+}
+#login-btn
+{ background: #069fd7; color: #fff; border-radius: 0 4px 4px 0; float: right; width: 50%; cursor: pointer; transition: all 300ms ease;
+}
+.cover-section2
+{ text-align: center;  padding: 180px 20px;  color: rgba(0,0,0,0.84);
+  /* background: -webkit-gradient(linear, top left, bottom left, from(#fafafa), to(#eeeeee));
+  background: -webkit-linear-gradient(#fafafa, #eeeeee); */
+  background: linear-gradient(#fafafa,#eeeeee);
+}
+.how-bg
+{  background-image: url('assets/howitwork-bg.jpg');  background-repeat: no-repeat;  background-position: center;
+    color: rgba(0,0,0,0.84);
+  width: 100%;
+}
+
+.how-arthos-work
+{  top: -140px;  box-sizing: border-box;  margin: 40px auto;  padding: 0 20px;  text-align: center;  width: 100%;  transition: all 400ms ease;
+  background: #fff; border: 2px dotted #42beec;
+}
+.arthos-border {
+  width: 100%;
+  border: 1px solid #282828;
+  border-top: 0;
+}
+
+.arthos-topic-bg {
+  position: relative;
+  top: -25px;
+  line-height: 50px;
+  width: 95%;
+  margin: 0 auto;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  color: #fff;
+  background: #42beec;
+}
+
+#arthos-topic-1:before , #arthos-topic-2:before , #arthos-topic-3:before , #arthos-topic-1:after , #arthos-topic-2:after , #arthos-topic-3:after {
+  left: 99.2%;
+  bottom: -2px;
+  z-index: 2;
+  border: solid transparent;
+  content: "";
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-width: 27px;
+  margin-top: -25px;
+}
+
+.arthos-topics a {
+  display: block;
+  width: 100%;
+  height: 50px;
+  margin: 0;
+}
+
+.arthos-topics {
+  padding: 0;
+  transition: all 300ms ease;
+}
+
+.arthos-topics:hover {
+  background: #04739c;
+}
+
+
+.arthos-topics.active:hover {
+  background: #04739c !important;
+}
+
+#arthos-topic-1:before , #arthos-topic-2:before , #arthos-topic-3:before {
+  left: 100%;
+  border-left-color: #057fac;
+}
+
+#arthos-topic-1:after , #arthos-topic-2:after , #arthos-topic-3:after  {
+  border-left-color: #42beec;
+  transition: all 300ms ease;
+}
+
+#arthos-topic-4 {
+  margin-left: 350px;
+  position: relative;
+  top: 27px;
+  line-height: 50px;
+  left: 0;
+  right: 0;
+  background: #42beec;
+  border-radius: 0 5px 5px 0;
+}
+
+#arthos-topic-4:before {
+  left: -50px;
+  bottom: 0;
+  border: solid transparent;
+  content: "";
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-width: 25px;
+  margin-top: -25px;
+  border-right-color: #42beec;
+  transition: all 300ms ease;
+}
+
+.arthos-topics.active#arthos-topic-1:after , .arthos-topics.active#arthos-topic-2:after , .arthos-topics.active#arthos-topic-3:after {
+  border-left-color: transparent;
+}
+
+.arthos-topics.active#arthos-topic-4:before {
+  border-right-color: #057fac;
+}
+
+#arthos-topic-1.arthos-topics:hover:after , #arthos-topic-2.arthos-topics:hover:after , #arthos-topic-3:hover:after {
+  border-left-color: #04739c;
+}
+
+#arthos-topic-4.arthos-topics:hover {
+  background: #04739c;
+
+}
+
+#arthos-topic-4.arthos-topics:hover:before {
+  border-right-color: #04739c;
+}
+
+.how-arthos-work .active {
+  background: #057fac !important;
+}
+.arthos-step {
+  margin: 25px auto;
+}
+
+.arthos-steps {
+  color: rgba(0,0,0,0.84);
+  padding: 10px;
+}
+
+.arthos-steps img {
+  width: 100%;
+}
+
+.progress-circle i {
+  background: #05ac1d;
+  color: white;
+  width: 50px;
+  height: 50px;
+  padding: 6px;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.arthos-tech-img {
+  padding: 0;
+  max-width: 600px;
+}
+
+.arthos-tech-img img {
+  width: 80%;
+  height: 100%;
+}
+
+.arthos-techs {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.26);
+  padding: 40px 20px;
+  margin: 40px auto;
+}
+.title-section {
+  text-align: center;
+  padding: 20px 0;
+}

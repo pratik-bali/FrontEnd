@@ -3,15 +3,17 @@
     "jhipsterVersion": "4.14.3",
     "baseName": "Buckswise_Front_End",
     "clientFramework": "angularX",
-    "useSass": false,
-    "clientPackageManager": "yarn",
+    "useSass": true,
+    "clientPackageManager": "npm",
     "authenticationType": "jwt",
     "cacheProvider": "no",
     "databaseType": "sql",
     "devDatabaseType": "sql",
     "prodDatabaseType": "sql",
     "applicationType": "monolith",
-    "testFrameworks": [],
+    "testFrameworks": [
+      "protractor"
+    ],
     "jhiPrefix": "jhi",
     "enableTranslation": false,
     "skipServer": true

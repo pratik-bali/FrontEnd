@@ -13,6 +13,11 @@ import { NotificationInterceptor } from './blocks/interceptor/notification.inter
 import { BuckswiseFrontEndSharedModule, UserRouteAccessService } from './shared';
 import { BuckswiseFrontEndAppRoutingModule} from './app-routing.module';
 import { BuckswiseFrontEndHomeModule } from './home/home.module';
+
+import { BuckswiseFrontEndPratikModule } from './pratik/pratik.module';
+import { BuckswiseFrontEndDemoModule } from './demo/demo.module';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BuckswiseFrontEndAdminModule } from './admin/admin.module';
 import { BuckswiseFrontEndAccountModule } from './account/account.module';
 import { BuckswiseFrontEndEntityModule } from './entities/entity.module';
@@ -30,13 +35,16 @@ import {
 @NgModule({
     imports: [
         BrowserModule,
+        FormsModule,
         BuckswiseFrontEndAppRoutingModule,
         Ng2Webstorage.forRoot({ prefix: 'jhi', separator: '-'}),
         BuckswiseFrontEndSharedModule,
         BuckswiseFrontEndHomeModule,
+        BuckswiseFrontEndPratikModule,
         BuckswiseFrontEndAdminModule,
         BuckswiseFrontEndAccountModule,
         BuckswiseFrontEndEntityModule,
+        BuckswiseFrontEndDemoModule
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [
