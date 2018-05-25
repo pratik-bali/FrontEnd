@@ -1,36 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NAMED_ENTITIES } from '@angular/compiler';
 import { checkAndUpdateBinding } from '@angular/core/src/view/util';
+import { Utility, Credit, General, Health, House, Income, Life, Loan, Misc, Travel } from './spending.model';
 
-import { Income } from './services/income.model';
-import { IncomeService } from './services/income.service';
-
-import { Utility } from './services/utility.model';
-import { UtilityService } from './services/utility.service';
-
-import { House } from './services/house.model';
-import { HouseService } from './services/house.service';
-
-import { Travel } from './services/travel.model';
-import { TravelService } from './services/travel.service';
-
-import { Misc } from './services/misc.model';
-import { MiscService } from './services/misc.service';
-
-import { Loan } from './services/loan.model';
-import { LoanService } from './services/loan.service';
-
-import { Life } from './services/life.model';
-import { LifeService } from './services/life.service';
-
-import { Health } from './services/health.model';
-import { HealthService } from './services/health.service';
-
-import { General } from './services/general.model';
-import { GeneralService } from './services/general.service';
-
-import { Credit } from './services/credit.model';
-import { CreditService } from './services/credit.service';
+// tslint:disable-next-line:max-line-length
+import { IncomeService, UtilityService, HouseService, TravelService, MiscService, LoanService, LifeService, HealthService, GeneralService, CreditService } from './spending.service';
 
 @Component({
   selector: 'jhi-spending',
@@ -38,18 +12,12 @@ import { CreditService } from './services/credit.service';
   styles: ['./spending.component.css']
 })
 export class SpendingComponent implements OnInit {
-  resource = ''; amount; expense; demoarr;
-
-// Utility
-// household
-// loan and debts home,personal,auto,education,property,gold,hand
-// insurance payment
-// credit cards
-// entertainment and travel
-// miscellaneous
+  totalIncome: number; totalUtility: number; totalHousehold: number; totalTravel: number; totalMisc: number;
+  resource: any; amount: any; expense; demoarr;
+   i;
 
   dynamicLoanArray: any = [];
-  dynamicIncome = [];
+  dynamicIncome: any = [];
   dynamicUtilityArray: any = [];
   dynamicHousehold: any = [];
   dynamicTravel: any = [];
@@ -59,6 +27,7 @@ export class SpendingComponent implements OnInit {
   dynamicGeneral: any = [];
   dynamicCredit: any = [];
 
+  //  Dropdown Arrays
   LoanTypeArray = [
     {name: 'Home Loan'},
     {name: 'Personal Loan'},
@@ -94,6 +63,13 @@ export class SpendingComponent implements OnInit {
     {name: 'Titanium '}
   ];
 
+  //   Table Arrays
+  IncomeArray: any = [];
+  UtilityArray: any = [];
+  HouseholdArray: any = [];
+  TravelArray: any = [];
+  MiscArray: any = [];
+
   // object creation
   income: Income = new Income();
   utility: Utility = new Utility();
@@ -120,6 +96,14 @@ export class SpendingComponent implements OnInit {
     ) { }
 
   ngOnInit() {
+    console.log('inside onInit()');
+
+    this.calcIncomeTotal();
+    // this.onIncomeGet();
+    this.totalIncome = 0;
+
+    this.calcUtilityTotal();
+
     // for income
     this.income.incomeSalary = 0;
     this.income.incomeAward = 0;
@@ -173,49 +157,107 @@ export class SpendingComponent implements OnInit {
     this.misc.cloth = 0;
   }
 
+  clear() {
+      this.resource = '';
+      this.amount = '';
+      this.expense = '';
+  }
+
   // income
+  calcIncomeTotal() {
+    this.totalIncome = 0;
+    for (let i = 0; i < this.dynamicIncome.length; i++) {
+        const value1 = this.dynamicIncome[i].value;
+        // console.log(this.totalIncome);
+        this.totalIncome = this.totalIncome + value1;
+    }
+    console.log(this.totalIncome);
+  }
   addFieldValue() {
       this.dynamicIncome.push({
         name: this.resource,
         value: this.amount
       });
-      this.income.IncomeArray.push({
-        name: this.resource,
-        value: this.amount
-      });
+      this.calcIncomeTotal();
+      this.clear();
   }
   deleteFieldValue(index) {
       this.dynamicIncome.splice(index, 1);
-      this.income.IncomeArray.splice(index, 1);
-      console.log('deleted' + index);
+      this.calcIncomeTotal();
   }
   onIncomeSave(): void {
-    this.incomeService.ServiceIncome(this.income)
-     .subscribe((data) => {
-       alert('success');
-    });
+    this.income.dynamicIncome = this.dynamicIncome;
+    this.incomeService.PutIncome(this.income)
+     .subscribe(
+         (data) => { alert('Your data saved'); }
+        );
+  }
+  onIncomeGet() {
+    console.log('inside onIncomeGet()');
+    this.incomeService.GetIncome()
+      .subscribe(
+        (response: any[]) => {
+            this.IncomeArray = response;
+            this.income.incomeSalary = this.IncomeArray.incomeSalary;
+            this.income.incomeAward = this.IncomeArray.incomeAward;
+            this.income.incomeBonus = this.IncomeArray.incomeBonus;
+            this.income.incomePension = this.IncomeArray.incomePension;
+            this.income.incomeSaving = this.IncomeArray.incomeSaving;
+            this.income.incomeDeposit = this.IncomeArray.incomeDeposit;
+            this.income.incomeRental = this.IncomeArray.incomeRental;
+            this.dynamicIncome = this.IncomeArray.dynamicIncome;
+        }
+      );
+      console.log('onIncomeGet() success');
   }
 
   // utility
+  calcUtilityTotal() {
+    this.totalUtility = 0;
+    for (let i = 0; i < this.dynamicUtilityArray.length; i++) {
+        const value1 = this.dynamicUtilityArray[i].value;
+        // console.log(this.totalUtility);
+        this.totalUtility = this.totalUtility + value1;
+    }
+    console.log(this.totalUtility);
+  }
   AddUtility() {
     this.dynamicUtilityArray.push({
       name: this.resource,
       value: this.expense
     });
+    this.calcUtilityTotal();
+    this.clear();
   }
   RemoveUtility(index) {
     this.dynamicUtilityArray.splice(index, 1);
-    this.utility.UtilityArray.splice(index, 1);
+    this.calcUtilityTotal();
   }
   SaveUtility(): void {
-    this.utility.UtilityArray.push({
-      name: this.resource,
-      value: this.expense
-    });
-    this.utilityService.ServiceUtility(this.utility)
-    .subscribe((data) => {
-      alert('success');
-   });
+    this.utility.dynamicUtility = this.dynamicUtilityArray;
+    this.utilityService.PutUtility(this.utility)
+     .subscribe(
+       (data) => { alert ('Your utility data saved') ; }
+      );
+  }
+  GetUtility(): void {
+    console.log('inside GetUtility()');
+    this.utilityService.GetUtility()
+     .subscribe((response: any[]) => {
+            this.UtilityArray = response;
+            this.utility.electricity = this.UtilityArray.electricity;
+            this.utility.gas = this.UtilityArray.gas;
+            this.utility.water = this.UtilityArray.water;
+            this.utility.telephone = this.UtilityArray.telephone;
+            this.utility.mobile = this.UtilityArray.mobile;
+            this.utility.internet = this.UtilityArray.internet;
+            this.utility.tv = this.UtilityArray.tv;
+            this.utility.vcd = this.UtilityArray.vcd;
+            this.utility.news = this.UtilityArray.news;
+            this.dynamicUtilityArray = this.UtilityArray.dynamicUtility;
+        }
+      );
+      console.log('GetUtility() success');
   }
 
   // household

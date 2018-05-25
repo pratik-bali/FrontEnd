@@ -6,16 +6,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-import { IncomeService } from './spending/services/income.service';
-import { UtilityService } from './spending/services/utility.service';
-import { HouseService } from './spending/services/house.service';
-import { TravelService } from './spending/services/travel.service';
-import { MiscService } from './spending/services/misc.service';
-import { LoanService } from './spending/services/loan.service';
-import { LifeService } from './spending/services/life.service';
-import { HealthService } from './spending/services/health.service';
-import { GeneralService } from './spending/services/general.service';
-import { CreditService } from './spending/services/credit.service';
+// tslint:disable-next-line:max-line-length
+import { IncomeService, UtilityService, HouseService, TravelService, MiscService, LoanService, LifeService, HealthService, GeneralService, CreditService } from './spending/spending.service';
 
 @NgModule({
     imports: [
