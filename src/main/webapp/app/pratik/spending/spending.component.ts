@@ -104,6 +104,7 @@ export class SpendingComponent implements OnInit {
     this.totalUtility = 0;
     this.calcHouseholdTotal();
     this.totalHousehold = 0;
+
     // for income
     this.income.incomeSalary = 0;
     this.income.incomeAward = 0;
@@ -313,6 +314,7 @@ export class SpendingComponent implements OnInit {
       );
       console.log('getHousehold() success');
   }
+
   // loan
   AddLoan() {
     this.dynamicLoanArray.push({
