@@ -413,6 +413,12 @@
                               <span>Save</span>
                           </span>
                       </button>
+                      <button type="button" class="btn btn-link" (click)="GetHousehold()">
+                          <span>
+                              <i class="fa fa-save" aria-hidden="true"></i>
+                              <span>Get</span>
+                          </span>
+                      </button>
                       <button type="button" class="btn btn-link">
                           <span>
                               <i class="fas fa-sync fa-spin" aria-hidden="true"></i>
@@ -477,75 +483,89 @@
                               <td> Milk </td>
                               <td> <input type="number" id="10" [(ngModel)]="house.milk"  [ngModelOptions]="{standalone: true}" placeholder="0" > </td>
                               <td> <input type="number" id="11" value="{{house.milk * 12}}" placeholder="0" disabled > </td>
+                              <td> </td>
                             </tr>
                             <tr>
                               <td> Veg / Non Veg / Fruits </td>
                               <td> <input type="number" id="21" [(ngModel)]="house.fruit"  [ngModelOptions]="{standalone: true}" placeholder="0"> </td>
                               <td> <input type="number" id="22" value="{{house.fruit * 12}}" placeholder="0"  disabled > </td>
+                              <td> </td>
                             </tr>
                             <tr>
                               <td> Rent </td>
                               <td> <input type="number" id="31" [(ngModel)]="house.rent" [ngModelOptions]="{standalone: true}"  placeholder="0"> </td>
                               <td> <input type="number" id="32" value="{{house.rent * 12}}"  placeholder="0" disabled > </td>
+                              <td> </td>
                             </tr>
                             <tr>
                               <td> Fuel </td>
                               <td> <input type="number" id="41" [(ngModel)]="house.fuel"  [ngModelOptions]="{standalone: true}" placeholder="0"> </td>
                               <td> <input type="number" id="42" value="{{house.fuel * 12}}"  placeholder="0" disabled > </td>
+                              <td> </td>
                             </tr>
                             <tr>
                               <td> Medical expenses </td>
                               <td> <input type="number" id="51" [(ngModel)]="house.medical"  [ngModelOptions]="{standalone: true}" placeholder="0"> </td>
                               <td> <input type="number" id="52" value="{{house.medical * 12}}"  placeholder="0" disabled > </td>
+                              <td> </td>
                             </tr>
                             <tr>
                               <td> Monthly Society Maintainance </td>
                               <td> <input type="number" id="61" [(ngModel)]="house.society"  [ngModelOptions]="{standalone: true}" placeholder="0"> </td>
                               <td> <input type="number" id="62" value="{{house.society * 12}}"  placeholder="0" disabled > </td>
+                              <td> </td>
                             </tr>
                             <tr>
                               <td> Auto Maintainance </td>
                               <td> <input type="number" id="71" [(ngModel)]="house.auto"  [ngModelOptions]="{standalone: true}" placeholder="0"> </td>
                               <td> <input type="number" id="72" value="{{house.auto * 12}}" placeholder="0"  disabled > </td>
+                              <td> </td>
                             </tr>
                             <tr>
                               <td> Education  </td>
                               <td> <input type="number" id="81" [(ngModel)]="house.edu"  [ngModelOptions]="{standalone: true}" placeholder="0"> </td>
                               <td> <input type="number" id="82" value="{{house.edu * 12}}"  placeholder="0" disabled > </td>
+                              <td> </td>
                             </tr>
                             <tr>
                               <td> Groceries and Supplies </td>
                               <td> <input type="number" id="91" [(ngModel)]="house.grocery"  [ngModelOptions]="{standalone: true}" placeholder="0"> </td>
                               <td> <input type="number" id="92" value="{{house.grocery * 12}}" placeholder="0"  disabled > </td>
+                              <td> </td>
                             </tr>
                             <tr>
                               <td> Maid / Cook / Nanny / Driver </td>
                               <td> <input type="number" id="101" [(ngModel)]="house.servent"  [ngModelOptions]="{standalone: true}" placeholder="0"> </td>
                               <td> <input type="number" id="102" value="{{house.servent * 12}}"  placeholder="0" disabled > </td>
+                              <td> </td>
                             </tr>
                             <tr>
                               <td> Laundry / Dhobi </td>
                               <td> <input type="number" id="111" [(ngModel)]="house.laundry"  [ngModelOptions]="{standalone: true}" placeholder="0"> </td>
                               <td> <input type="number" id="112" value="{{house.laundry * 12}}" placeholder="0"  disabled > </td>
+                              <td> </td>
                             </tr>
                             <tr>
                               <td> Video / CD Rentals </td>
                               <td> <input type="number" id="121" [(ngModel)]="house.vcd" [ngModelOptions]="{standalone: true}"  placeholder="0"> </td>
                               <td> <input type="number" id="122" value="{{house.vcd * 12}}" placeholder="0"  disabled > </td>
+                              <td> </td>
                             </tr>
                             <tr>
                               <td> Personal care (haircut / Salon / spa / gym etc.) </td>
                               <td> <input type="number" id="131" [(ngModel)]="house.selfcare" [ngModelOptions]="{standalone: true}"  placeholder="0"> </td>
                               <td> <input type="number" id="132" value="{{house.selfcare * 12}}" placeholder="0"  disabled > </td>
+                              <td></td>
                             </tr>
                             <tr>
                                 <td> Property Tax </td>
                                 <td> <input type="number" id="141" [(ngModel)]="house.property" [ngModelOptions]="{standalone: true}"  placeholder="0"> </td>
                                 <td> <input type="number" id="142" value="{{house.property * 12}}" placeholder="0"  disabled > </td>
+                                <td> </td>
                             </tr>
                            <tr *ngFor="let field of dynamicHousehold; let i = index">
                               <td> {{field.name}} </td>
-                              <td><input  type="number" value="{{field.value}}" > </td>
+                              <td><input  type="number" value="{{field.value}}" disabled> </td>
                               <td><input  type="number" value="{{field.value * 12}}" disabled> </td>
                               <td><button class="btn btn-outline-info"  type="button" (click)="RemoveHousehold(i)" >
                                 <span> <i class="fa fa-trash" aria-hidden="true"></i></span></button>
@@ -555,8 +575,9 @@
                           <tfoot>
                                 <tr>
                                   <th scope="col">Total</th>
-                                  <th> <input type="number" value="{{house.milk+house.fruit+house.rent+house.fuel+house.medical+house.society+house.auto+house.edu+house.grocery+house.servent+house.laundry+house.vcd+house.selfcare+house.property}}" disabled> </th>
-                                  <th> <input type="number" value="{{ (house.milk+house.fruit+house.rent+house.fuel+house.medical+house.society+house.auto+house.edu+house.grocery+house.servent+house.laundry+house.vcd+house.selfcare+house.property)*12}}" disabled> </th>
+                                  <th> {{house.milk+house.fruit+house.rent+house.fuel+house.medical+house.society+house.auto+house.edu+house.grocery+house.servent+house.laundry+house.vcd+house.selfcare+house.property + totalHousehold}} </th>
+                                  <th> {{ (house.milk+house.fruit+house.rent+house.fuel+house.medical+house.society+house.auto+house.edu+house.grocery+house.servent+house.laundry+house.vcd+house.selfcare+house.property + totalHousehold)*12}} </th>
+                                  <th></th>
                                 </tr>
                           </tfoot>
                     </table>

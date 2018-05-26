@@ -99,11 +99,11 @@ export class SpendingComponent implements OnInit {
     console.log('inside onInit()');
 
     this.calcIncomeTotal();
-    // this.onIncomeGet();
     this.totalIncome = 0;
-
     this.calcUtilityTotal();
-
+    this.totalUtility = 0;
+    this.calcHouseholdTotal();
+    this.totalHousehold = 0;
     // for income
     this.income.incomeSalary = 0;
     this.income.incomeAward = 0;
@@ -261,22 +261,58 @@ export class SpendingComponent implements OnInit {
   }
 
   // household
+  calcHouseholdTotal() {
+    this.totalHousehold = 0;
+    for (let i = 0; i < this.dynamicHousehold.length; i++) {
+        const value1 = this.dynamicHousehold[i].value;
+        // console.log(this.totalUtility);
+        this.totalHousehold = this.totalHousehold + value1;
+    }
+    console.log(this.totalHousehold);
+  }
   AddHousehold() {
     this.dynamicHousehold.push({
       name: this.resource,
       value: this.expense
     });
+    this.calcHouseholdTotal();
+    this.clear();
   }
   RemoveHousehold(index) {
     this.dynamicHousehold.splice(index, 1);
+    this.calcHouseholdTotal();
   }
   SaveHousehold(): void {
-    this.houseService.ServiceHouse(this.house)
-     .subscribe((data) => {
-       alert('success');
-    });
+    this.house.dynamicHousehold = this.dynamicHousehold;
+    this.houseService.PutHouse(this.house)
+    .subscribe(
+      (data) => { alert ('Your utility data saved') ; }
+     );
   }
-
+  GetHousehold(): void {
+    console.log('inside getHousehold()');
+    this.houseService.GetHouse()
+     .subscribe((response: any[]) => {
+            this.HouseholdArray = response;
+            this.house.milk = this.HouseholdArray.milk;
+            this.house.fruit = this.HouseholdArray.fruit;
+            this.house.rent = this.HouseholdArray.rent;
+            this.house.fuel = this.HouseholdArray.fuel;
+            this.house.medical = this.HouseholdArray.medical;
+            this.house.society = this.HouseholdArray.society;
+            this.house.auto = this.HouseholdArray.auto;
+            this.house.edu = this.HouseholdArray.edu;
+            this.house.grocery = this.HouseholdArray.grocery;
+            this.house.servent = this.HouseholdArray.servent;
+            this.house.laundry = this.HouseholdArray.laundry;
+            this.house.vcd = this.HouseholdArray.vcd;
+            this.house.selfcare = this.HouseholdArray.selfcare;
+            this.house.property = this.HouseholdArray.property;
+            this.dynamicHousehold = this.HouseholdArray.dynamicHousehold;
+        }
+      );
+      console.log('getHousehold() success');
+  }
   // loan
   AddLoan() {
     this.dynamicLoanArray.push({

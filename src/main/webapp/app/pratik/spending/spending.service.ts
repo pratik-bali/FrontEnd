@@ -44,6 +44,20 @@ export class UtilityService {
 }
 
 @Injectable()
+export class HouseService {
+    constructor(private http: HttpClient) { }
+
+    public PutHouse(house) {
+    console.log(house);
+    return this.http.put('https://demologin-79c13.firebaseio.com/household.json', house);
+    }
+    public GetHouse() {
+        console.log('gethouse service');
+        return this.http.get('https://demologin-79c13.firebaseio.com/household.json');
+      }
+}
+
+@Injectable()
 export class CreditService {
     constructor(private http: HttpClient) { }
     public ServiceCredit(credit) {
@@ -72,16 +86,6 @@ export class HealthService {
         console.log(health);
 
         return this.http.post<Health[]>(SERVER_API_URL + 'api/', health);
-    }
-}
-
-@Injectable()
-export class HouseService {
-    constructor(private http: HttpClient) { }
-    public ServiceHouse(house) {
-    console.log(house);
-
-    return this.http.post<House[]>(SERVER_API_URL + 'api/', house);
     }
 }
 
