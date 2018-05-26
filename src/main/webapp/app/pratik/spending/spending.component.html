@@ -1619,6 +1619,12 @@
                             <span>Save</span>
                         </span>
                     </button>
+                    <button type="button" class="btn btn-link" (click)="GetTravel()">
+                        <span>
+                            <i class="fa fa-save" aria-hidden="true"></i>
+                            <span>Get</span>
+                        </span>
+                    </button>
                     <button type="button" class="btn btn-link">
                         <span>
                             <i class="fas fa-sync fa-spin" aria-hidden="true"></i>
@@ -1680,30 +1686,35 @@
                               <td> Work Expenses (lunch, coffee) </td>
                               <td> <input type="number" id="10" [(ngModel)]="travel.food"  [ngModelOptions]="{standalone: true}" placeholder="0" > </td>
                               <td> <input type="number" id="11" value="{{travel.food * 12}}" placeholder="0" disabled > </td>
+                              <td></td>
                             </tr>
                             <tr>
                               <td> Entertainment (movies, plays, etc.) </td>
                               <td> <input type="number" id="10" [(ngModel)]="travel.entertainment" [ngModelOptions]="{standalone: true}"  placeholder="0" > </td>
                               <td> <input type="number" id="11" value="{{travel.entertainment * 12}}" placeholder="0" disabled > </td>
+                              <td></td>
                             </tr>
                             <tr>
                               <td> Dining out </td>
                               <td> <input type="number" id="10" [(ngModel)]="travel.dineout"  [ngModelOptions]="{standalone: true}" placeholder="0" > </td>
                               <td> <input type="number" id="11" value="{{travel.dineout * 12}}" placeholder="0" disabled > </td>
+                              <td></td>
                             </tr>
                             <tr>
                               <td> Travel / Vacation </td>
                               <td> <input type="number" id="10" [(ngModel)]="travel.vacation"  [ngModelOptions]="{standalone: true}" placeholder="0" > </td>
                               <td> <input type="number" id="11" value="{{travel.vacation * 12}}" placeholder="0" disabled > </td>
+                              <td></td>
                             </tr>
                             <tr>
                               <td> Hobbies </td>
                               <td> <input type="number" id="10" [(ngModel)]="travel.hobby"  [ngModelOptions]="{standalone: true}" placeholder="0" > </td>
                               <td> <input type="number" id="11" value="{{travel.hobby * 12}}" placeholder="0" disabled > </td>
+                              <td></td>
                             </tr>
                             <tr *ngFor="let field of dynamicTravel; let i = index">
                               <td> {{field.name}} </td>
-                              <td><input  type="number" value="{{field.value}}"  placeholder="0"> </td>
+                              <td><input  type="number" value="{{field.value}}"  placeholder="0" disabled> </td>
                               <td><input  type="number" value="{{field.value * 12}}"  placeholder="0" disabled> </td>
                               <td><button class="btn btn-outline-info"  type="button" (click)="RemoveTravel(i)" >
                                 <span> <i class="fa fa-trash" aria-hidden="true"></i></span></button>
@@ -1713,12 +1724,9 @@
                           <tfoot>
                                 <tr>
                                   <th scope="col">Total</th>
-                                  <th> <input type="number"
-                                    value="{{travel.food+travel.entertainment+travel.dineout+travel.vacation+travel.hobby}}"
-                                     disabled> </th>
-                                  <th> <input type="number"
-                                    value="{{ (travel.food+travel.entertainment+travel.dineout+travel.vacation+travel.hobby) * 12}}"
-                                     disabled> </th>
+                                  <th> {{travel.food+ travel.entertainment+ travel.dineout+ travel.vacation+ travel.hobby+ totalTravel}}</th>
+                                  <th> {{ (travel.food+travel.entertainment+travel.dineout+travel.vacation+travel.hobby + totalTravel) * 12}}</th>
+                                     <th></th>
                                 </tr>
                           </tfoot>
                     </table>

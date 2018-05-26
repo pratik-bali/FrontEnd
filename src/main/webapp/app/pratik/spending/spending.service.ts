@@ -125,9 +125,14 @@ export class MiscService {
 @Injectable()
 export class TravelService {
     constructor(private http: HttpClient) { }
-    public ServiceTravel(travel) {
-    console.log(travel);
 
-    return this.http.post<Travel[]>(SERVER_API_URL + 'api/', travel);
+    public PutTravel(travel) {
+    console.log(travel);
+    return this.http.put('https://demologin-79c13.firebaseio.com/travel.json', travel);
+    }
+
+    public GetTravel() {
+        console.log('gethouse service');
+        return this.http.get('https://demologin-79c13.firebaseio.com/travel.json');
     }
 }

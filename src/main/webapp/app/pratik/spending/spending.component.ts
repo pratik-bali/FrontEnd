@@ -98,12 +98,14 @@ export class SpendingComponent implements OnInit {
   ngOnInit() {
     console.log('inside onInit()');
 
-    this.calcIncomeTotal();
+    // this.calcIncomeTotal();
     this.totalIncome = 0;
-    this.calcUtilityTotal();
+    // this.calcUtilityTotal();
     this.totalUtility = 0;
-    this.calcHouseholdTotal();
+    // this.calcHouseholdTotal();
     this.totalHousehold = 0;
+    this.totalTravel = 0;
+    this.totalMisc = 0;
 
     // for income
     this.income.incomeSalary = 0;
@@ -287,7 +289,7 @@ export class SpendingComponent implements OnInit {
     this.house.dynamicHousehold = this.dynamicHousehold;
     this.houseService.PutHouse(this.house)
     .subscribe(
-      (data) => { alert ('Your utility data saved') ; }
+      (data) => { alert ('Your household data saved') ; }
      );
   }
   GetHousehold(): void {
@@ -437,25 +439,53 @@ export class SpendingComponent implements OnInit {
       this.creditService.ServiceCredit(this.credit)
       .subscribe((data) => {
         alert('success');
-  });
-  console.log('in credit save');
+    });
+    console.log('in credit save');
   }
 
   // travel
+  calcTravelTotal() {
+    this.totalTravel = 0;
+    for (let i = 0; i < this.dynamicTravel.length; i++) {
+        const value1 = this.dynamicTravel[i].value;
+        // console.log(this.totalUtility);
+        this.totalTravel = this.totalTravel + value1;
+    }
+    console.log(this.totalTravel);
+  }
   AddTravel() {
     this.dynamicTravel.push({
       name: this.resource,
       value: this.expense
     });
+    this.calcTravelTotal();
+    this.clear();
   }
   RemoveTravel(index) {
     this.dynamicTravel.splice(index, 1);
+    this.calcTravelTotal();
   }
   SaveTravel(): void {
-    this.travelService.ServiceTravel(this.travel)
-     .subscribe((data) => {
-       alert('success');
-    });
+    this.travel.dynamicTravel = this.dynamicTravel;
+    this.travelService.PutTravel(this.travel)
+    .subscribe(
+      (data) => { alert ('Your travel data saved') ; }
+     );
+  }
+  GetTravel(): void {
+    console.log('inside getTravel()');
+    this.travelService.GetTravel()
+     .subscribe((response: any[]) => {
+            this.TravelArray = response;
+            this.travel.food = this.TravelArray.food;
+            this.travel.entertainment = this.TravelArray.entertainment;
+            this.travel.dineout = this.TravelArray.dineout;
+            this.travel.vacation = this.TravelArray.vacation;
+            this.travel.hobby = this.TravelArray.hobby;
+            this.dynamicTravel = this.TravelArray.dynamicTravel;
+        }
+      );
+      console.log('getTravel() success');
   }
 
   // misc
