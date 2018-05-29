@@ -1,6 +1,6 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { HowItWorkComponent, SpendingComponent, howRoute, SpendRoute, pratikState} from './';
+import { HowItWorkComponent, SpendingComponent, SubscriptionComponent, pratikState} from './';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 // tslint:disable-next-line:max-line-length
 import { IncomeService, UtilityService, HouseService, TravelService, MiscService, LoanService, LifeService, HealthService, GeneralService, CreditService } from './spending/spending.service';
+// import { SubscriptionComponent } from './subscription/subscription.component';
 
 @NgModule({
     imports: [
@@ -18,7 +19,8 @@ import { IncomeService, UtilityService, HouseService, TravelService, MiscService
     ],
     declarations: [
         HowItWorkComponent,
-        SpendingComponent
+        SpendingComponent,
+        SubscriptionComponent
     ],
     providers: [
         IncomeService,
