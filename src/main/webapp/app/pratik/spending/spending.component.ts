@@ -17,6 +17,7 @@ export class SpendingComponent implements OnInit {
    i;
 
   dynamicLoanArray: any = [];
+  newLoanArray: any [];
   dynamicIncome: any = [];
   dynamicUtilityArray: any = [];
   dynamicHousehold: any = [];
@@ -339,23 +340,38 @@ export class SpendingComponent implements OnInit {
     this.dynamicLoanArray.splice(index, 1);
   }
   onLoanSave(): void {
-    this.loanService.ServiceLoan(this.loan)
-     .subscribe((data) => {
-       alert('success');
-    });
+    this.loan.loanModelArray = this.dynamicLoanArray;
+    this.loanService.PutLoan(this.loan.loanModelArray)
+     .subscribe(
+       (data) => {alert('Loan Added successfully'); });
+  }
+  onGetLoan(): void {
+    console.log('inside getLoan()');
+    this.loanService.GetLoan()
+     .subscribe((response: any[]) => {
+            this.dynamicLoanArray = response;
+            console.log(' from direct response to dynamicLoanArray ');
+            console.log(this.dynamicLoanArray);
+          }
+      );
+      console.log('getLoan() success');
   }
 
   // life insurance
   AddLifeInsurance() {
     this.dynamicLifeArray.push({
       iName: this.life.type,
+      issuer: this.life.issuer,
+      ins_name: this.life.ins_name,
+      prName: this.life.proposer_name,
+      sDate: this.life.start_date,
+      pterm: this.life.policy_term,
+      pMode: this.life.premium_mode,
       pName: this.life.policy_name,
+      sum: this.life.sum,
       premium: this.life.premium,
       term: this.life.premium_term,
-      pterm: this.life.policy_term,
-      sum: this.life.sum
     });
-
     console.log('AddLife() call success');
 
   }
@@ -363,37 +379,57 @@ export class SpendingComponent implements OnInit {
     this.dynamicLifeArray.splice(index, 1);
   }
   onLifeSave(): void {
-    this.lifeService.ServiceLife(this.life)
+    this.life.lifeModelArray = this.dynamicLifeArray;
+    this.lifeService.PutLife(this.life.lifeModelArray)
      .subscribe((data) => {
        alert('success');
     });
     console.log('in life save');
   }
+  onGetLife(): void {
+    this.lifeService.GetLife()
+     .subscribe((response: any[]) => {
+            this.dynamicLifeArray = response;
+            console.log(this.dynamicLifeArray);
+          }
+      );
+      console.log('getLife() success');
+  }
 
   // health insurance
   AddHealth() {
-    console.log('Addhealth() call ');
-
     this.dynamicHealth.push({
       iName: this.health.ins_name,
       pName: this.health.policy_name,
       premium: this.health.premium,
       pterm: this.health.policy_term,
-      sum: this.health.sum
+      sum: this.health.sum,
+      poNo: this.health.policy_no,
+      issuer: this.health.issuer,
+      prName: this.health.proposer_name,
+      sDate: this.health.start_date,
+      pMode: this.health.premium_mode
+
     });
-
-    console.log('Addhealth() call success');
-
   }
   RemoveHealth(index) {
     this.dynamicHealth.splice(index, 1);
   }
   onHealthSave(): void {
-    this.healthService.ServiceHealth(this.health)
+    this.health.healthModelArray = this.dynamicHealth;
+    this.healthService.PutHealth(this.health.healthModelArray)
      .subscribe((data) => {
-       alert('success');
+       alert('Health Insurance saved');
     });
-    console.log('in health save');
+  }
+  onGetHealth(): void {
+    this.healthService.GetHealth()
+     .subscribe((response: any[]) => {
+            this.dynamicHealth = response;
+            console.log(this.dynamicHealth);
+          }
+      );
+      console.log('getHealth() success');
   }
 
   // general insurance
@@ -405,7 +441,9 @@ export class SpendingComponent implements OnInit {
       issuer: this.general.issuer,
       pterm: this.general.policy_term,
       pdate: this.general.start_date,
-      sum: this.general.sum
+      sum: this.general.sum,
+      poNo: this.general.policy_no,
+      prName: this.general.proposer_name
     });
 
     console.log('AddGeneral() call success');
@@ -414,14 +452,24 @@ export class SpendingComponent implements OnInit {
     this.dynamicGeneral.splice(index, 1);
   }
   onGeneralSave(): void {
-    this.generalService.ServiceGeneral(this.general)
+    this.general.generalModelArray = this.dynamicGeneral;
+    this.generalService.PutGeneral(this.general.generalModelArray)
      .subscribe((data) => {
-       alert('success');
+       alert('General Insurance saved');
     });
     console.log('in general save');
   }
+  onGetGeneral(): void {
+    this.generalService.GetGeneral()
+     .subscribe((response: any[]) => {
+            this.dynamicGeneral = response;
+            console.log(this.dynamicGeneral);
+          }
+      );
+      console.log('getGeneral() success');
+  }
 
-  // credit insurance
+  // credit card
   AddCredit() {
       this.dynamicCredit.push({
           type: this.credit.type,
@@ -433,14 +481,25 @@ export class SpendingComponent implements OnInit {
   console.log('AddGeneral() call success');
   }
   RemoveCredit(index) {
-  this.dynamicCredit.splice(index, 1);
+    this.dynamicCredit.splice(index, 1);
   }
   onCreditSave(): void {
-      this.creditService.ServiceCredit(this.credit)
-      .subscribe((data) => {
-        alert('success');
-    });
+    this.credit.creditModelArray = this.dynamicCredit;
+      this.creditService.PutCredit(this.credit.creditModelArray)
+      .subscribe(
+        (data) => { alert('success'); }
+      );
     console.log('in credit save');
+  }
+  onGetCredit(): void {
+    console.log('inside getCredit()');
+    this.creditService.GetCredit()
+     .subscribe((response: any[]) => {
+            this.dynamicCredit = response;
+            console.log(this.dynamicCredit);
+          }
+      );
+      console.log('getCredit() success');
   }
 
   // travel
@@ -489,19 +548,49 @@ export class SpendingComponent implements OnInit {
   }
 
   // misc
+  calcMiscTotal() {
+    this.totalMisc = 0;
+    for (let i = 0; i < this.dynamicMisc.length; i++) {
+        const value1 = this.dynamicMisc[i].value;
+        // console.log(this.totalIncome);
+        this.totalMisc = this.totalMisc + value1;
+    }
+    console.log(this.totalMisc);
+  }
   AddMisc() {
     this.dynamicMisc.push({
       name: this.resource,
       value: this.expense
     });
+    this.calcMiscTotal();
+    this.clear();
   }
   RemoveMisc(index) {
     this.dynamicMisc.splice(index, 1);
+    this.calcMiscTotal();
   }
   SaveMisc(): void {
-    this.miscService.ServiceMisc(this.misc)
-     .subscribe((data) => {
-       alert('success');
-    });
+    this.misc.dynamicMisc = this.dynamicMisc;
+    this.miscService.PutMisc(this.misc)
+     .subscribe(
+       (data) => { alert('Your Misc data saved'); });
   }
+  GetMisc(): void {
+    console.log('inside getMisc()');
+    this.miscService.GetMisc()
+     .subscribe((response: any[]) => {
+            this.MiscArray = response;
+            this.misc.shoes = this.MiscArray.shoes;
+            this.misc.pet = this.MiscArray.pet;
+            this.misc.electronics = this.MiscArray.electronics;
+            this.misc.furniture = this.MiscArray.furniture;
+            this.misc.charity = this.MiscArray.charity;
+            this.misc.gift = this.MiscArray.gift;
+            this.misc.cloth = this.MiscArray.cloth;
+            this.dynamicMisc = this.MiscArray.dynamicMisc;
+        }
+      );
+      console.log('getMisc() success');
+  }
+
 }

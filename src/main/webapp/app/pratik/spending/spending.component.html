@@ -66,16 +66,16 @@
               </button>
               <button type="button" class="btn btn-link" (click)="onIncomeGet()">
                       <span>
-                          <i class="fa fa-save" aria-hidden="true"></i>
+                          <i class="far fa-arrow-alt-circle-down"></i>
                           <span>Get</span>
                       </span>
               </button>
-              <button type="button" class="btn btn-link">
+              <!-- <button type="button" class="btn btn-link">
                       <span>
                           <i class="fas fa-sync fa-spin" aria-hidden="true"></i>
                           <span>Reset</span>
                       </span>
-              </button>
+              </button> -->
               <button type="button" class="btn btn-link">
                       <span>
                           <i class="fa fa-info" aria-hidden="true"></i>
@@ -179,7 +179,7 @@
                   </tbody> -->
                    <tr *ngFor="let field of dynamicIncome; let i = index">
                       <td> {{field.name}} </td>
-                      <td><input  type="number" value="{{field.value}}"  placeholder="0" > </td>
+                      <td><input  type="number" value="{{field.value}}"  placeholder="0" disabled> </td>
                       <td><input  type="number" value="{{field.value * 12}}" placeholder="0"  disabled> </td>
                       <td><button class="btn btn-outline-info"  type="button" (click)="deleteFieldValue(i)" >
                         <span> <i class="fa fa-trash" aria-hidden="true"></i></span></button>
@@ -266,16 +266,16 @@
                     </button>
                       <button type="button" class="btn btn-link"  (click)="GetUtility()">
                           <span>
-                              <i class="fa fa-save" aria-hidden="true"></i>
+                            <i class="far fa-arrow-alt-circle-down"></i>
                               <span>Get</span>
                           </span>
-                      </button>
-                    <button type="button" class="btn btn-link">
+                      </button>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <!-- <button type="button" class="btn btn-link">
                           <span>
                               <i class="fas fa-sync fa-spin" aria-hidden="true"></i>
                               <span>Reset</span>
                           </span>
-                      </button>
+                      </button> -->
                       <button type="button" class="btn btn-link">
                           <span>
                               <i class="fa fa-info" aria-hidden="true"></i>
@@ -377,7 +377,7 @@
                       </tr>
                       <tr *ngFor="let field of dynamicUtilityArray; let i = index">
                           <td> {{field.name}} </td>
-                          <td><input  type="number" value="{{field.value}}" > </td>
+                          <td><input  type="number" value="{{field.value}}" disabled> </td>
                           <td><input  type="number" value="{{field.value * 12}}" disabled> </td>
                           <td><button class="btn btn-outline-info"  type="button" (click)="RemoveUtility(i)" >
                           <span> <i class="fa fa-trash" aria-hidden="true"></i></span></button>
@@ -415,16 +415,16 @@
                       </button>
                       <button type="button" class="btn btn-link" (click)="GetHousehold()">
                           <span>
-                              <i class="fa fa-save" aria-hidden="true"></i>
+                            <i class="far fa-arrow-alt-circle-down"></i>
                               <span>Get</span>
                           </span>
-                      </button>
-                      <button type="button" class="btn btn-link">
+                      </button>&nbsp;&nbsp;&nbsp;
+                      <!-- <button type="button" class="btn btn-link">
                           <span>
                               <i class="fas fa-sync fa-spin" aria-hidden="true"></i>
                               <span>Reset</span>
                           </span>
-                      </button>
+                      </button> -->
                       <button type="button" class="btn btn-link">
                           <span>
                               <i class="fa fa-info" aria-hidden="true"></i>
@@ -601,6 +601,12 @@
                               <span>Save</span>
                           </span>
                       </button>
+                      <button type="button" class="btn btn-link" (click)="onGetLoan()">
+                          <span>
+                            <i class="far fa-arrow-alt-circle-down"></i>
+                              <span>Get</span>
+                          </span>
+                      </button>
                       <button type="button" class="btn btn-link">
                           <span>
                               <i class="fa fa-info" aria-hidden="true"></i>
@@ -637,9 +643,7 @@
                               </tr>
                           </tbody>
                       </table>
-                  </div>
-                  <!-- /loan table -->
-
+                  </div> <!-- end of loan table -->
 
                   <!--loan modal start -->
                   <div class="modal fade" id="loanModal" tabindex="-1" role="dialog" aria-labelledby="loanModalLabel" aria-hidden="true">
@@ -664,7 +668,7 @@
                                                   class="col-sm-5 col-form-label">Choose Loan Type:</label>
                                                   <div class="col-sm-6">
                                                       <select class="form-control" name="type" [(ngModel)]="loan.loan_type">
-                                                          <option>Choose your loan type</option>
+                                                         
                                                           <option *ngFor="let type of LoanTypeArray" value="{{ type.name }}">
                                                               {{ type.name }}
                                                           </option>
@@ -829,6 +833,12 @@
                                       <span>Save</span>
                                   </span>
                               </button>
+                              <button type="button" class="btn btn-link" (click)="onGetLife()">
+                                <span>
+                                    <i class="far fa-arrow-alt-circle-down"></i>
+                                    <span>Get</span>
+                                </span>
+                            </button>
                               <button type="button" class="btn btn-link">
                                   <span>
                                       <i class="fa fa-info" aria-hidden="true"></i>
@@ -836,8 +846,6 @@
                                   </span>
                               </button>
                           </div>  <!--end of buttons -->
-
-                          <br>
                           <!-- life table -->
                           <div>
                               <table class="table table-hover table-sm">
@@ -1034,7 +1042,6 @@
                       <!-- health insurance -->
                       <div class="tab-pane fade" id="nav-health" role="tabpanel" aria-labelledby="nav-health-tab">
 
-
                           <!--start of buttons -->
                           <div style="margin-top: -50px" class="pull-right">
                               <button type="button" class="btn btn-link" data-toggle="modal" data-target="#healthModal">
@@ -1049,6 +1056,13 @@
                                           <span>Save</span>
                                       </span>
                                   </button>
+                                  <button type="button" class="btn btn-link" (click)="onGetHealth()">
+                                    <span>
+                                        <i class="far fa-arrow-alt-circle-down"></i>
+                                        <span>Get</span>
+                                    </span>
+                                </button>
+    
                               <button type="button" class="btn btn-link">
                                   <span>
                                       <i class="fa fa-info" aria-hidden="true"></i>
@@ -1056,7 +1070,6 @@
                                   </span>
                               </button>
                           </div>  <!--end of buttons -->
-                          <br>
 
                           <!-- health table -->
                           <div>
@@ -1084,8 +1097,7 @@
                                       </tr>
                                   </tbody>
                               </table>
-                          </div>
-                          <!-- /health table -->
+                          </div><!-- /health table -->
 
                           <!--health insurance modal start -->
                           <div class="modal fade" id="healthModal" tabindex="-1" role="dialog" aria-labelledby="healthModalLabel" aria-hidden="true">
@@ -1238,7 +1250,6 @@
                       <!-- general insurance -->
                       <div class="tab-pane fade" id="nav-general" role="tabpanel" aria-labelledby="nav-general-tab">
 
-
                           <!--start of buttons -->
                           <div style="margin-top: -50px" class="pull-right">
                               <button type="button" class="btn btn-link" data-toggle="modal" data-target="#generalModal">
@@ -1253,6 +1264,13 @@
                                           <span>Save</span>
                                       </span>
                               </button>
+                              <button type="button" class="btn btn-link" (click)="onGetGeneral()">
+                                <span>
+                                    <i class="far fa-arrow-alt-circle-down"></i>
+                                    <span>Get</span>
+                                </span>
+                            </button>
+
                               <button type="button" class="btn btn-link">
                                       <span>
                                           <i class="fa fa-info" aria-hidden="true"></i>
@@ -1260,7 +1278,6 @@
                                       </span>
                               </button>
                           </div> <!--end of buttons -->
-                          <br>
 
                            <!-- general table -->
                            <div>
@@ -1293,8 +1310,7 @@
                                           </tr>
                                       </tbody>
                                   </table>
-                          </div>
-                          <!-- /general table -->
+                          </div> <!-- /general table -->
 
                           <!--general modal start -->
                           <div class="modal fade" id="generalModal" tabindex="-1" role="dialog" aria-labelledby="generalModalLabel" aria-hidden="true">
@@ -1441,7 +1457,7 @@
               <div style="margin-top: -50px" class="pull-right">
                   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#creditModal">
                       <span>
-                          <i class="fa fa-plus" aria-hidden="true"></i>
+                          <i class="fa fa-plus " aria-hidden="true"></i>
                           <span>Add</span>
                       </span>
                   </button>
@@ -1450,7 +1466,13 @@
                               <i class="fa fa-save" aria-hidden="true"></i>
                               <span>Save</span>
                           </span>
-                      </button>
+                  </button>
+                  <button type="button" class="btn btn-link" (click)="onGetCredit()">
+                    <span>
+                        <i class="far fa-arrow-alt-circle-down"></i>
+                        <span>Get</span>
+                    </span>
+                  </button>
                   <button type="button" class="btn btn-link">
                       <span>
                           <i class="fa fa-info" aria-hidden="true"></i>
@@ -1621,16 +1643,16 @@
                     </button>
                     <button type="button" class="btn btn-link" (click)="GetTravel()">
                         <span>
-                            <i class="fa fa-save" aria-hidden="true"></i>
+                            <i class="far fa-arrow-alt-circle-down"></i>
                             <span>Get</span>
                         </span>
-                    </button>
-                    <button type="button" class="btn btn-link">
+                    </button>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <!-- <button type="button" class="btn btn-link">
                         <span>
                             <i class="fas fa-sync fa-spin" aria-hidden="true"></i>
                             <span>Reset</span>
                         </span>
-                    </button>
+                    </button> -->
                     <button type="button" class="btn btn-link">
                         <span>
                             <i class="fa fa-info" aria-hidden="true"></i>
@@ -1750,12 +1772,18 @@
                               <span>Save</span>
                           </span>
                       </button>
-                      <button type="button" class="btn btn-link">
+                      <button type="button" class="btn btn-link"  (click)="GetMisc()">
+                          <span>
+                            <i class="far fa-arrow-alt-circle-down"></i>
+                              <span>Get</span>
+                          </span>
+                      </button>&nbsp;&nbsp;&nbsp;&nbsp;
+                      <!-- <button type="button" class="btn btn-link">
                           <span>
                               <i class="fas fa-sync fa-spin" aria-hidden="true"></i>
                               <span>Reset</span>
                           </span>
-                      </button>
+                      </button> -->
                       <button type="button" class="btn btn-link">
                           <span>
                               <i class="fa fa-info" aria-hidden="true"></i>
@@ -1813,42 +1841,49 @@
                               <td> Shoes </td>
                               <td> <input type="number" id="11" [(ngModel)]="misc.shoes"  [ngModelOptions]="{standalone: true}" placeholder="0" > </td>
                               <td> <input type="number" id="12" value="{{misc.shoes * 12}}" placeholder="0" disabled > </td>
+                              <td> </td>
                             </tr>
                             <tr>
                               <td> Pet Care </td>
                               <td> <input type="number" id="21" [(ngModel)]="misc.pet"  [ngModelOptions]="{standalone: true}" placeholder="0" > </td>
                               <td> <input type="number" id="22" value="{{misc.pet * 12}}" placeholder="0" disabled > </td>
+                              <td> </td>
                             </tr>
                             <tr>
                               <td> Electronics </td>
                               <td> <input type="number" id="31" [(ngModel)]="misc.electronics"  [ngModelOptions]="{standalone: true}" placeholder="0" > </td>
                               <td> <input type="number" id="32" value="{{misc.electronics * 12}}" placeholder="0" disabled > </td>
+                              <td> </td>
                             </tr>
                             <tr>
                               <td> Furniture </td>
                               <td> <input type="number" id="41" [(ngModel)]="misc.furniture"  [ngModelOptions]="{standalone: true}" placeholder="0" > </td>
                               <td> <input type="number" id="42" value="{{misc.furniture * 12}}" placeholder="0" disabled > </td>
+                              <td> </td>
                             </tr>
                             <tr>
                               <td> Charity </td>
                               <td> <input type="number" id="51" [(ngModel)]="misc.charity"  [ngModelOptions]="{standalone: true}" placeholder="0" > </td>
                               <td> <input type="number" id="52" value="{{misc.charity * 12}}" placeholder="0" disabled > </td>
+                              <td> </td>
                             </tr>
                             <tr>
                               <td> Gifts </td>
                               <td> <input type="number" id="61" [(ngModel)]="misc.gift"  [ngModelOptions]="{standalone: true}" placeholder="0" > </td>
                               <td> <input type="number" id="62" value="{{misc.gift * 12}}" placeholder="0" disabled > </td>
+                              <td> </td>
                             </tr>
                             <tr>
                               <td> Clothes </td>
                               <td> <input type="number" id="71" [(ngModel)]="misc.cloth"  [ngModelOptions]="{standalone: true}" placeholder="0" > </td>
                               <td> <input type="number" id="72" value="{{misc.cloth * 12}}" placeholder="0" disabled > </td>
+                              <td> </td>
                             </tr>
                             <tr *ngFor="let field of dynamicMisc; let i = index">
                                 <td> {{field.name}} </td>
-                                <td><input  type="number" value="{{field.value}}" > </td>
+                                <td><input  type="number" value="{{field.value}}" disabled> </td>
                                 <td><input  type="number" value="{{field.value * 12}}" disabled> </td>
-                                <td><button class="btn btn-outline-info"  type="button" (click)="RemoveUtility(i)" >
+                                <td><button class="btn btn-outline-info"  type="button" (click)="RemoveMisc(i)" >
                                   <span> <i class="fa fa-trash" aria-hidden="true"></i></span></button>
                                 </td>
                               </tr>
@@ -1856,11 +1891,10 @@
                             <tfoot>
                                   <tr>
                                     <th scope="col">Total</th>
-                                    <th> <input type="number"
-                                      value="{{misc.shoes+misc.pet+misc.electronics+misc.furniture+misc.charity+misc.gift+misc.cloth}}" disabled> </th>
-                                    <th> <input type="number"
-                                      value="{{ (misc.shoes+misc.pet+misc.electronics+misc.furniture+misc.charity+misc.gift+misc.cloth)*12}}" disabled> </th>
-                                  </tr>
+                                    <th> {{misc.shoes+misc.pet+misc.electronics+misc.furniture+misc.charity+misc.gift+misc.cloth + totalMisc}} </th>
+                                    <th> {{ (misc.shoes+misc.pet+misc.electronics+misc.furniture+misc.charity+misc.gift+misc.cloth)*12 + totalMisc}} </th>
+                                      <th> </th>
+                                    </tr>
                             </tfoot>
                   </table>
 

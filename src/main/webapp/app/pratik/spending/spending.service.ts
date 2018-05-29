@@ -60,20 +60,27 @@ export class HouseService {
 @Injectable()
 export class CreditService {
     constructor(private http: HttpClient) { }
-    public ServiceCredit(credit) {
-    console.log('credit service success');
-    return this.http.post<Credit[]>(SERVER_API_URL + 'api/', credit);
-  }
+
+    public PutCredit(credit) {
+        console.log('credit service success');
+        return this.http.put('https://demologin-79c13.firebaseio.com/credit.json', credit);
+    }
+    public GetCredit() {
+        return this.http.get('https://demologin-79c13.firebaseio.com/credit.json');
+    }
+
 }
 
 @Injectable()
 export class GeneralService {
     constructor(private http: HttpClient) { }
-    public ServiceGeneral(general) {
-        console.log(general);
-        console.log('success service ');
 
-        return this.http.post<General[]>(SERVER_API_URL + 'api/', general);
+    public PutGeneral(general) {
+        console.log(general);
+        return this.http.put('https://demologin-79c13.firebaseio.com/ins_general.json', general);
+    }
+    public GetGeneral() {
+        return this.http.get('https://demologin-79c13.firebaseio.com/ins_general.json');
     }
 }
 
@@ -81,44 +88,51 @@ export class GeneralService {
 export class HealthService {
     constructor(private http: HttpClient) { }
 
-    public ServiceHealth(health) {
-        console.log('service success');
+    public PutHealth(health) {
         console.log(health);
-
-        return this.http.post<Health[]>(SERVER_API_URL + 'api/', health);
+        return this.http.put('https://demologin-79c13.firebaseio.com/ins_health.json', health);
+    }
+    public GetHealth() {
+        return this.http.get('https://demologin-79c13.firebaseio.com/ins_health.json');
     }
 }
 
 @Injectable()
 export class LifeService {
     constructor(private http: HttpClient) { }
-    public ServiceLife(life) {
-    console.log('life service success');
-    console.log(life);
 
-    return this.http.post<Life[]>(SERVER_API_URL + 'api/', life);
+    public PutLife(life) {
+        console.log(life);
+        return this.http.put('https://demologin-79c13.firebaseio.com/ins_life.json', life);
+    }
+    public GetLife() {
+        return this.http.get('https://demologin-79c13.firebaseio.com/ins_life.json');
     }
 }
 
 @Injectable()
 export class LoanService {
     constructor(private http: HttpClient) { }
-    public ServiceLoan(loan) {
-    console.log(loan);
 
-    console.log('SaveLoan() call success');
-
-    return this.http.post<Loan[]>(SERVER_API_URL + 'api/', loan);
+    public PutLoan(loan) {
+        console.log(loan);
+        return this.http.put('https://demologin-79c13.firebaseio.com/loan.json', loan);
+    }
+    public GetLoan() {
+        return this.http.get('https://demologin-79c13.firebaseio.com/loan.json');
     }
 }
 
 @Injectable()
 export class MiscService {
     constructor(private http: HttpClient) { }
-    public ServiceMisc(misc) {
-    console.log(misc);
 
-    return this.http.post<Misc[]>(SERVER_API_URL + 'api/', misc);
+    public PutMisc(misc) {
+        console.log(misc);
+        return this.http.put('https://demologin-79c13.firebaseio.com/misc.json', misc);
+    }
+    public GetMisc() {
+        return this.http.get('https://demologin-79c13.firebaseio.com/misc.json' );
     }
 }
 

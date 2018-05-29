@@ -26,29 +26,32 @@ export class Credit {
     type;
     roi;
     balance;
+    creditModelArray: any = [];
 }
 export class General {
-    policy_no;
-    issuer;
-    policy_name;
-    start_date;
-    premium;
-    proposer_name;
     ins_obj;
+    policy_name;
+    premium;
+    issuer;
     policy_term;
+    start_date;
     sum;
+    policy_no;
+    proposer_name;
+    generalModelArray: any = [];
 }
 export class Health {
+    ins_name;
+    policy_name;
+    premium;
+    policy_term;
+    sum;
     policy_no;
     issuer;
-    policy_name;
     proposer_name;
-    policy_term;
     start_date;
     premium_mode;
-    ins_name;
-    sum;
-    premium;
+    healthModelArray: any = [];
 }
 export class House {
     milk;
@@ -92,6 +95,7 @@ export class Life {
     sum;
     premium;
     premium_term;
+    lifeModelArray: any = [];
 
     constructor() { }
 }
@@ -107,7 +111,7 @@ export class Loan {
     intrest_type: '';
     roi;
     rdate: '';
-
+    loanModelArray: any = [];
     constructor() { }
 }
 export class Misc {
