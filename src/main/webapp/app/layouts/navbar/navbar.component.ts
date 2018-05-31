@@ -12,7 +12,7 @@ import { VERSION } from '../../app.constants';
     templateUrl: './navbar.component.html',
     styleUrls: [
         'navbar.scss'
-    ]
+       ]
 })
 export class NavbarComponent implements OnInit {
     inProduction: boolean;
