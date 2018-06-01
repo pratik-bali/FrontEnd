@@ -3,7 +3,9 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'jhi-services',
   templateUrl: './services.component.html',
-  styles: []
+  styleUrls: [
+    '../../css/universal.css'
+  ]
 })
 export class ServicesComponent implements OnInit {
 
