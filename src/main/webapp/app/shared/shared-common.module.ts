@@ -4,14 +4,14 @@ import { registerLocaleData } from '@angular/common';
 import locale from '@angular/common/locales/en';
 
 import {
-    BuckswiseFrontEndSharedLibsModule,
+    BuckswiseSharedLibsModule,
     JhiAlertComponent,
     JhiAlertErrorComponent
 } from './';
 
 @NgModule({
     imports: [
-        BuckswiseFrontEndSharedLibsModule
+        BuckswiseSharedLibsModule
     ],
     declarations: [
         JhiAlertComponent,
@@ -25,12 +25,12 @@ import {
         },
     ],
     exports: [
-        BuckswiseFrontEndSharedLibsModule,
+        BuckswiseSharedLibsModule,
         JhiAlertComponent,
         JhiAlertErrorComponent
     ]
 })
-export class BuckswiseFrontEndSharedCommonModule {
+export class BuckswiseSharedCommonModule {
     constructor() {
         registerLocaleData(locale);
     }

@@ -4,7 +4,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Observable } from 'rxjs/Observable';
 import { JhiEventManager } from 'ng-jhipster';
 
-import { BuckswiseFrontEndTestModule } from '../../../test.module';
+import { BuckswiseTestModule } from '../../../test.module';
 import { UserMgmtDialogComponent } from '../../../../../../main/webapp/app/admin/user-management/user-management-dialog.component';
 import { UserService, User } from '../../../../../../main/webapp/app/shared';
 
@@ -19,7 +19,7 @@ describe('Component Tests', () => {
 
         beforeEach(async(() => {
             TestBed.configureTestingModule({
-                imports: [BuckswiseFrontEndTestModule],
+                imports: [BuckswiseTestModule],
                 declarations: [UserMgmtDialogComponent],
                 providers: [
                     UserService

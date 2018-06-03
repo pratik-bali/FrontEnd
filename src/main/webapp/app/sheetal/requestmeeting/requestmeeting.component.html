@@ -1,0 +1,71 @@
+<div class="container-fluid">
+<section id="contact">
+    <div class="section-content">
+        <h1 class="section-header"> <span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s"> Request a Meeting</span></h1>
+       <h3>Here is a few approaches to get in touch with me. It would be ideal if you send an email, fill the contact form <strong>I'm looking forward to speaking with you</h3>
+    </div>
+    <div class="contact-section">
+    <div class="container">
+        <form submit=onsubmit()>
+            <div class="col-md-6 form-line">
+                  <div class="form-group">
+                    <label class="control-label sr-only " for="Name"></label>
+                    <input id="name" type="text" placeholder="Name" name="name" [(ngModel)]="user.name" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label for="Email">Email Address</label>
+                    <input id="email" type="text" name="email" placeholder="Email" [(ngModel)]="user.email" class="form-control">
+                   </div>	
+                  <div class="form-group">
+                    <label for="phone">Mobile No.</label>
+                    <input id="phone" type="text" name="phone" placeholder="Phone" [(ngModel)]="user.phone"class="form-control">
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label for ="description"> Message</label>
+                      <textarea class="form-control pdt20" id="textarea" name="message"  placeholder="Message" [(ngModel)]="user.message"></textarea>
+                  </div>
+                  <div>
+                    <button (click)="submitUser()"  class="btn btn-primary btn-lg"data-toggle="modal"data-target="#universal">Send message</button>
+                    <div id="universal" class="modal fade" role="dialog">
+                        <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                 </div>
+                            <div class="modal-body">
+                              <h2 style="color:black">Your meeting request submit successfully!
+                              </h2>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                  </div>     
+            </div>
+        </form>
+    </div>
+</section>
+<div class="container">
+<div class="row text-center">
+        <div class="col-sm-3 col-xs-6 first-box">
+        <h1><span class="glyphicon glyphicon-earphone"></span></h1>
+        <h3>Phone</h3>
+        <h2>+91 90 2222 0075</h2><br>
+    </div>
+    <br><br>
+    <div class="col-sm-3 col-xs-6 second-box">
+        <h1><span class="glyphicon glyphicon-home"></span></h1>
+        <h3>Location</h3>
+        <h5>OFFICE # 9, 7TH FLOOR, A WING, CITY VISTA, FOUNTAIN ROAD, ASHOKA NAGAR, KHARADI, PUNE, MAHARASHTRA 411014</h5><br>
+    </div>
+    <div class="col-sm-3 col-xs-6 third-box">
+        <h1><span class="glyphicon glyphicon-send"></span></h1>
+        <h3>E-mail</h3>
+        <h4>Contact@valuequo.com</h4><br>
+    </div>
+    <div class="col-sm-3 col-xs-6 fourth-box">
+        <h1><span class="glyphicon glyphicon-leaf"></span></h1>
+        <h3>Web</h3>
+        <h5>www.Buckswise.com</h5><br>
+    </div>
+    </div>

@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 import { Observable } from 'rxjs/Observable';
 import { HttpHeaders, HttpResponse } from '@angular/common/http';
 
-import { BuckswiseFrontEndTestModule } from '../../../test.module';
+import { BuckswiseTestModule } from '../../../test.module';
 import { DemoentityComponent } from '../../../../../../main/webapp/app/entities/demoentity/demoentity.component';
 import { DemoentityService } from '../../../../../../main/webapp/app/entities/demoentity/demoentity.service';
 import { Demoentity } from '../../../../../../main/webapp/app/entities/demoentity/demoentity.model';
@@ -17,7 +17,7 @@ describe('Component Tests', () => {
 
         beforeEach(async(() => {
             TestBed.configureTestingModule({
-                imports: [BuckswiseFrontEndTestModule],
+                imports: [BuckswiseTestModule],
                 declarations: [DemoentityComponent],
                 providers: [
                     DemoentityService

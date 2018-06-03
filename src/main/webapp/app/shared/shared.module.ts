@@ -2,8 +2,8 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { DatePipe } from '@angular/common';
 
 import {
-    BuckswiseFrontEndSharedLibsModule,
-    BuckswiseFrontEndSharedCommonModule,
+    BuckswiseSharedLibsModule,
+    BuckswiseSharedCommonModule,
     CSRFService,
     AuthServerProvider,
     AccountService,
@@ -14,12 +14,13 @@ import {
     JhiLoginModalComponent,
     Principal,
     HasAnyAuthorityDirective,
+
 } from './';
 
 @NgModule({
     imports: [
-        BuckswiseFrontEndSharedLibsModule,
-        BuckswiseFrontEndSharedCommonModule
+        BuckswiseSharedLibsModule,
+        BuckswiseSharedCommonModule
     ],
     declarations: [
         JhiLoginModalComponent,
@@ -38,7 +39,7 @@ import {
     ],
     entryComponents: [JhiLoginModalComponent],
     exports: [
-        BuckswiseFrontEndSharedCommonModule,
+        BuckswiseSharedCommonModule,
         JhiLoginModalComponent,
         HasAnyAuthorityDirective,
         DatePipe
@@ -46,4 +47,4 @@ import {
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 
 })
-export class BuckswiseFrontEndSharedModule {}
+export class BuckswiseSharedModule {}

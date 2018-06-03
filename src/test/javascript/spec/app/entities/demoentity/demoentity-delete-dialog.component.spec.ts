@@ -4,7 +4,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Observable } from 'rxjs/Observable';
 import { JhiEventManager } from 'ng-jhipster';
 
-import { BuckswiseFrontEndTestModule } from '../../../test.module';
+import { BuckswiseTestModule } from '../../../test.module';
 import { DemoentityDeleteDialogComponent } from '../../../../../../main/webapp/app/entities/demoentity/demoentity-delete-dialog.component';
 import { DemoentityService } from '../../../../../../main/webapp/app/entities/demoentity/demoentity.service';
 
@@ -19,7 +19,7 @@ describe('Component Tests', () => {
 
         beforeEach(async(() => {
             TestBed.configureTestingModule({
-                imports: [BuckswiseFrontEndTestModule],
+                imports: [BuckswiseTestModule],
                 declarations: [DemoentityDeleteDialogComponent],
                 providers: [
                     DemoentityService

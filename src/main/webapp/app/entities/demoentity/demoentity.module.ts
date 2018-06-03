@@ -1,7 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { BuckswiseFrontEndSharedModule } from '../../shared';
+import { BuckswiseSharedModule } from '../../shared';
 import {
     DemoentityService,
     DemoentityPopupService,
@@ -22,7 +22,7 @@ const ENTITY_STATES = [
 
 @NgModule({
     imports: [
-        BuckswiseFrontEndSharedModule,
+        BuckswiseSharedModule,
         RouterModule.forChild(ENTITY_STATES)
     ],
     declarations: [
@@ -47,3 +47,4 @@ const ENTITY_STATES = [
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class BuckswiseFrontEndDemoentityModule {}
+

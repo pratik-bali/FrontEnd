@@ -2,7 +2,7 @@ import { TestBed, async, tick, fakeAsync, inject } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 
-import { BuckswiseFrontEndTestModule } from '../../../test.module';
+import { BuckswiseTestModule } from '../../../test.module';
 import { MockActivatedRoute } from '../../../helpers/mock-route.service';
 import { ActivateService } from '../../../../../../main/webapp/app/account/activate/activate.service';
 import { ActivateComponent } from '../../../../../../main/webapp/app/account/activate/activate.component';
@@ -15,7 +15,7 @@ describe('Component Tests', () => {
 
         beforeEach(async(() => {
             TestBed.configureTestingModule({
-                imports: [BuckswiseFrontEndTestModule],
+                imports: [BuckswiseTestModule],
                 declarations: [ActivateComponent],
                 providers: [
                     ActivateService,
