@@ -30,7 +30,7 @@
             </li>
 -->
             <!-- Pratik code start here-->
-            <li  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <li *ngSwitchCase="true" ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="entity-menu">
                     <span> <i class="fa fa-th-list" aria-hidden="true"></i><span> Pratik</span></span>
                 </a>
@@ -85,7 +85,7 @@
 
              <!-- Pratik code ends here-->
              <!-- Sheetal code start here-->
-             <li  ngbDropdown class="nav-item dropdown pointer" 
+             <li *ngSwitchCase="true" ngbDropdown class="nav-item dropdown pointer" 
              routerLinkActive="active" >
                  <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="entity-menu">
                      <span>
