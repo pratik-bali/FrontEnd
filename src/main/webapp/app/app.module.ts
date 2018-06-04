@@ -16,6 +16,7 @@ import { BuckswiseFrontEndHomeModule } from './home/home.module';
 
 import { BuckswiseFrontEndPratikModule } from './pratik/pratik.module';
 import { BuckswiseFrontEndDemoModule } from './demo/demo.module';
+import { BuckswiseAppSheetalModule } from './sheetal/sheetal.module';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BuckswiseFrontEndAdminModule } from './admin/admin.module';
@@ -44,7 +45,8 @@ import {
         BuckswiseFrontEndAdminModule,
         BuckswiseFrontEndAccountModule,
         BuckswiseFrontEndEntityModule,
-        BuckswiseFrontEndDemoModule
+        BuckswiseFrontEndDemoModule,
+        BuckswiseAppSheetalModule
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [
