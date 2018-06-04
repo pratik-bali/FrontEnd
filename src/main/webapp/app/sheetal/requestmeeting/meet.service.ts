@@ -14,9 +14,8 @@ public submitUser(user: any) {
       console.log (user.email);
       console.log (user.phone);
       console.log (user.message);
-  
+
 return this.http.post<User[]>(SERVER_API_URL + 'api/', user);
-  
+
 }
 }
-  

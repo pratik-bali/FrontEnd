@@ -11,8 +11,7 @@ export class EightycService {
 
   constructor(private http: HttpClient) { }
 
-  public ServiceEightyc(eightyc)
-  {
+  public ServiceEightyc(eightyc) {
     console.log(eightyc.fixed);
     console.log(eightyc.tution);
     console.log(eightyc.nsc);
@@ -29,8 +28,4 @@ export class EightycService {
 
     return this.http.post<Eightyc[]>(SERVER_API_URL + 'api/', eightyc);
   }
-    
-    
-  }
-
-
+}

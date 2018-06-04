@@ -11,7 +11,7 @@ export class RequestmeetingComponent implements OnInit {
     constructor(private meetService: MeetService) { }
     submitUser(): void {
       this.meetService.submitUser(this.user)
-      .subscribe( data => {
+      .subscribe( (data) => {
         alert('successfully');
       });
     }

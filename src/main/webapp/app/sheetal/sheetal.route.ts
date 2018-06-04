@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 
-import { 
+import {
   mainRoute,
   contactRoute,
   meetRoute,

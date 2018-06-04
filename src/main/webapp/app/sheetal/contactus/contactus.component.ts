@@ -9,32 +9,31 @@ import * as $ from 'jQuery';
   styleUrls: ['./contactus.component.css']
 })
 export class ContactusComponent implements OnInit {
-user:User=new User();
-  constructor(private contactService:ContactService) { }
-  submitUser():void{
+user: User= new User();
+  constructor(private contactService: ContactService) { }
+  submitUser(): void {
     this.contactService.submitUser(this.user)
-    .subscribe(data=>{
-      alert("successfully");
+    .subscribe((data) => {
+      alert('successfully');
     });
-  };
+  }
 
   ngOnInit() {
     //    Validation for name
-    $("#name").bind("keypress", function (event) {
-      var charCode = event.which;
-      if (charCode == 8 || charCode == 0) {
+    $('#name').bind('keypress', function(event) {
+      const charCode = event.which;
+      if (charCode === 8 || charCode === 0) {
           return;
       } else {
-          var keyChar = String.fromCharCode(charCode);
+          const keyChar = String.fromCharCode(charCode);
           return /[a-zA-Z\s]/.test(keyChar);
       }
   });
 //    Validation for name
 //    Validation for email
 
-
 //    Validation for mobile
-  $("#phone").keydown(function (e) {
+  $('#phone').keydown(function(e) {
       if ($.inArray(e.keyCode, [46, 8, 9, 27, 13]) !== -1 ||
               (e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) ||
               (e.keyCode >= 35 && e.keyCode <= 40)) {
@@ -47,5 +46,3 @@ user:User=new User();
   }
 
   }
-
-

@@ -6,14 +6,12 @@ import { Gross } from './gross.model';
 import { Subscription } from 'rxjs/Subscription';
 import { Component, OnInit } from '@angular/core';
 
-
-
 @Injectable()
 export class GrossService {
 
   constructor(private http: HttpClient) { }
 
-  public ServiceGross(gross){
+  public ServiceGross(gross) {
 
     console.log(gross.bsalary);
     console.log(gross.da);
@@ -28,7 +26,7 @@ export class GrossService {
     console.log(gross.saving);
     console.log(gross.bonds);
     console.log(gross.convay);
-    
+
     return this.http.post<Gross[]>(SERVER_API_URL + 'api/', gross);
   }
 
