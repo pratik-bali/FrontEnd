@@ -5,9 +5,7 @@ import { MyloginService } from './mylogin.service';
 @Component({
   selector: 'jhi-demo',
   templateUrl: './demo.component.html',
-  styleUrls: [
-    './demo.component.css'
-]
+  styles: []
 })
 export class DemoComponent implements OnInit {
 
