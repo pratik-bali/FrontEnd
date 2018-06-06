@@ -23,6 +23,15 @@ import { BuckswiseFrontEndAdminModule } from './admin/admin.module';
 import { BuckswiseFrontEndAccountModule } from './account/account.module';
 import { BuckswiseFrontEndEntityModule } from './entities/entity.module';
 import { PaginationConfig } from './blocks/config/uib-pagination.config';
+
+// import { FamilyModule } from './family/family.module';
+// import { GoalModule } from './goal/goal.module';
+// // import { SubscribeModule } from './subscribe/subscribe.module';
+// import { SubscriberModule } from './subscriber/subscriber.module';
+// import { BuckswiseFrontEndRiskModule } from './risk/risk.module';
+// import { RiskComponent } from './risk/risk.component';
+// import { BuckswiseFrontEndMyAssetsModule } from './my-assets/my-assets.module';
+
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import {
     JhiMainComponent,
@@ -46,7 +55,13 @@ import {
         BuckswiseFrontEndAccountModule,
         BuckswiseFrontEndEntityModule,
         BuckswiseFrontEndDemoModule,
-        BuckswiseAppSheetalModule
+        BuckswiseAppSheetalModule,
+        // BuckswiseFrontEndMyAssetsModule,
+        // BuckswiseFrontEndRiskModule,
+        // FamilyModule,
+        // FormsModule,
+        // GoalModule,
+
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [
@@ -54,7 +69,8 @@ import {
         NavbarComponent,
         ErrorComponent,
         PageRibbonComponent,
-        FooterComponent
+        FooterComponent,
+        // RiskComponent
     ],
     providers: [
         ProfileService,

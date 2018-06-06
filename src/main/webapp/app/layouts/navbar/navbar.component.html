@@ -30,7 +30,7 @@
             </li>
 -->
             <!-- Pratik code start here-->
-            <li *ngSwitchCase="true" ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <li  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="entity-menu">
                     <span> <i class="fa fa-th-list" aria-hidden="true"></i><span> Pratik</span></span>
                 </a>
@@ -81,11 +81,10 @@
                     </span>
                 </a>
             </li> -->
-
-
              <!-- Pratik code ends here-->
+
              <!-- Sheetal code start here-->
-             <li *ngSwitchCase="true" ngbDropdown class="nav-item dropdown pointer" 
+             <li  ngbDropdown class="nav-item dropdown pointer" 
              routerLinkActive="active" >
                  <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="entity-menu">
                      <span>
@@ -124,6 +123,42 @@
                  </ul>
              </li>
              <!-- Sheetal code end here-->
+
+             <!-- Sanjay code start-->
+             <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <a class="nav-link" routerLink="/myfamily" (click)="collapseNavbar()">
+                    <span>
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                        <span>family</span>
+                    </span>
+                </a>
+            </li>
+            <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <a class="nav-link" routerLink="assets" (click)="collapseNavbar()">
+                    <span>
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                        <span>Assets & Liabilities</span>
+                    </span>
+                </a>
+            </li>
+            <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <a class="nav-link" routerLink="risk" (click)="collapseNavbar()">
+                    <span>
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                        <span>Risk</span>
+                    </span>
+                </a>
+            </li>
+            <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <a class="nav-link" routerLink="/goal" (click)="collapseNavbar()">
+                    <span>
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                        <span>Goal</span>
+                    </span>
+                </a>
+            </li>
+
+             <!-- Sanjay code ends -->
 
             <!-- jhipster-needle-add-element-to-menu - JHipster will add new menu items here -->
             <li *ngSwitchCase="true" ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
