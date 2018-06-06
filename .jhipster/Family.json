@@ -1,0 +1,50 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "fname",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "mname",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "lname",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "mobile",
+            "fieldType": "Integer",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "almobile",
+            "fieldType": "Integer",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "occupation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "company",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180517094750",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "family",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

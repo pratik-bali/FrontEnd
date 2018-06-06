@@ -1,0 +1,117 @@
+<h3>
+    <p class="font-weight-bold">Medical Insurance</h3>
+<!--start of buttons -->
+<div>
+    <div class="pull-right">
+    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#medicalModal">
+        <span>
+            <i class="fa fa-plus" aria-hidden="true"></i>
+            <span>Add New</span>
+        </span>
+    </button>
+    <button type="button" class="btn btn-link">
+        <span>
+            <i class="fa fa-info" aria-hidden="true"></i>
+            <span>Help</span>
+        </span>
+    </button>
+</div>
+    <!-- modal start -->
+    <div class="modal fade" id="medicalModal" tabindex="-1" role="dialog" aria-labelledby="medicalModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="medicalModalLabel">Medical Insurance for</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+                    <div class="modal-body">
+                        <jhi-alert-error></jhi-alert-error>
+                        <!-- <div class="form-group" [hidden]="!id">
+              <label for="id">ID</label>
+              <input type="text" class="form-control" id="id" name="id"
+                     [(ngModel)]="stocks.id" readonly />
+          </div> -->
+          <div class="form-group">
+            <label for="field_hosp_type">Hospital Type</label>
+            <select class="form-control" id="field_hosp_type" name="hosp_type" [(ngModel)]="medicalInsurance.hosp_type"
+            [ngModelOptions]="{standalone: true}" required>
+              <option>--select type--</option>
+              <option>Corporate</option>
+              <option>Private</option>
+              <option>Charitable</option>
+              <option>Government</option>
+             </select>
+          </div>
+          <div class="form-group">
+            <label for="field_room_type">Room Type</label>
+            <select class="form-control" id="field_room_type" name="room_type" [(ngModel)]="medicalInsurance.room_type"
+            [ngModelOptions]="{standalone: true}" required>
+              <option>--select type--</option>
+              <option>Single</option>
+              <option>Twin Sharing</option>
+              <option>General</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-control-label" for="field_family_members">Family Members</label>
+            <input type="text" class="form-control" name="family_members" id="family_members" [(ngModel)]="medicalInsurance.family_members" [ngModelOptions]="{standalone: true}"
+                required/>
+        </div>
+          <div class="modal-footer">
+
+                        <button type="submit" class="btn btn-primary" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary" data-dismiss="modal"
+                            (click)="MedicalInsurance()">
+                            <span class="fa fa-save"></span>&nbsp;
+                            <span>Save</span>
+                        </button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+                            <span class="fa fa-ban"></span>&nbsp;
+                            <span>Cancel</span>
+                        </button>
+                        <button type="button" class="btn btn-warning" (click)="resetFieldValue()">
+                            <span>
+                                <i class="fas fa-sync fa-spin" aria-hidden="true"></i>
+                                <span>Reset</span>
+                            </span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- end of modal -->
+</div>
+<!--end of buttons -->
+
+<!-- table starts here -->
+<div>
+    <table class="table table-hover table-sm">
+        <thead>
+            <tr>
+                <th scope="col">Hospital Type</th>
+                <th scope="col">Room Type</th>
+                <th scope="col">Family Members</th>
+                <th scope="col">Edit/Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr *ngFor="let medical of medicalArray; let i = index">
+                <!-- <td><a [routerLink]="['../stocks', stocks.id ]">{{stocks.id}}</a></td>
+    <td> {{stocks.id}} </td> -->
+                <td> {{medical.hosp_type}} </td>
+                <td>{{medical.room_type}} </td>
+                <td>{{medical.family_members}} </td>
+               
+                <td>
+                    <button class="btn btn-outline-danger" type="button" (click)="deleteFieldValue(i)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>
