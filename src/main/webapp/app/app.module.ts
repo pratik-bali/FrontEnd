@@ -13,6 +13,15 @@ import { NotificationInterceptor } from './blocks/interceptor/notification.inter
 import { BuckswiseFrontEndSharedModule, UserRouteAccessService } from './shared';
 import { BuckswiseFrontEndAppRoutingModule} from './app-routing.module';
 import { BuckswiseFrontEndHomeModule } from './home/home.module';
+<<<<<<< HEAD
+=======
+
+import { BuckswiseFrontEndPratikModule } from './pratik/pratik.module';
+import { BuckswiseFrontEndDemoModule } from './demo/demo.module';
+import { BuckswiseAppSheetalModule } from './sheetal/sheetal.module';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+>>>>>>> 17a22a215a62a48b1d0a25b2a21e8f3b5348c2cc
 import { BuckswiseFrontEndAdminModule } from './admin/admin.module';
 import { BuckswiseFrontEndAccountModule } from './account/account.module';
 import { BuckswiseFrontEndEntityModule } from './entities/entity.module';
@@ -57,6 +66,7 @@ import { FailComponent } from './fail/fail.component';
         BuckswiseFrontEndAdminModule,
         BuckswiseFrontEndAccountModule,
         BuckswiseFrontEndEntityModule,
+<<<<<<< HEAD
         BuckswiseFrontEndMyAssetsModule,
         BuckswiseFrontEndRiskModule,     
         FamilyModule,
@@ -67,6 +77,10 @@ import { FailComponent } from './fail/fail.component';
         SubscriberModule,
         BuckswiseFrontEndPratikModule
 
+=======
+        BuckswiseFrontEndDemoModule,
+        BuckswiseAppSheetalModule
+>>>>>>> 17a22a215a62a48b1d0a25b2a21e8f3b5348c2cc
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [
