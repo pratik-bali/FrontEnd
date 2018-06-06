@@ -1,0 +1,54 @@
+
+<div *ngIf="family">
+    <h2><span>Family</span> {{family.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Fname</span></dt>
+        <dd>
+            <span>{{family.fname}}</span>
+        </dd>
+        <dt><span>Mname</span></dt>
+        <dd>
+            <span>{{family.mname}}</span>
+        </dd>
+        <dt><span>Lname</span></dt>
+        <dd>
+            <span>{{family.lname}}</span>
+        </dd>
+        <dt><span>Email</span></dt>
+        <dd>
+            <span>{{family.email}}</span>
+        </dd>
+        <dt><span>Mobile</span></dt>
+        <dd>
+            <span>{{family.mobile}}</span>
+        </dd>
+        <dt><span>Almobile</span></dt>
+        <dd>
+            <span>{{family.almobile}}</span>
+        </dd>
+        <dt><span>Occupation</span></dt>
+        <dd>
+            <span>{{family.occupation}}</span>
+        </dd>
+        <dt><span>Company</span></dt>
+        <dd>
+            <span>{{family.company}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'family/'+ family.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>

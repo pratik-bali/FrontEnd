@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { JhiAlertService } from 'ng-jhipster';
 
+
 @Component({
     selector: 'jhi-alert',
     template: `
