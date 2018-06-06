@@ -1,36 +1,35 @@
-export class Myprofile{
+export class Myprofile {
     fname: string;
     mname: string;
-    lname:string;
-    dob:string;
-    gender:string;
-    maritalstatus:string;
+    lname: string;
+    dob: string;
+    gender: string;
+    maritalstatus: string;
     mobile: string;
     almobile: string;
     occupation: string;
     company: string;
-    howknow:string;
-    address:string;
+    howknow: string;
+    address: string;
     email: string;
-    pan:string;
-    country:string;
-    state:string;
-    city:string;
-    pin:string;
+    pan: string;
+    country: string;
+    state: string;
+    city: string;
+    pin: string;
 }
-export class Familyprofile{
+export class Familyprofile {
     relationship: string;
     fsname: string;
     mname: string;
-    lname:string;
+    lname: string;
     email: string;
-    dob:string;
+    dob: string;
     phonenum: string;
     occup: string;
-    check:boolean;
+    check: boolean;
 }
-export class Assumption{
-    
+export class Assumption {
     BRrateOfReturn: string;
     BRinflation: string;
     BRrealRateOfReturn: string;
@@ -41,5 +40,5 @@ export class Assumption{
     SurplusPercentInsurance: string;
     AgeOfRetirement: string;
     LifeExpentancy: string;
-    
+
 }

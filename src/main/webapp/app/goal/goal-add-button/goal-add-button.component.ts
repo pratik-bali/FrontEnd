@@ -11,6 +11,4 @@ export class GoalAddButtonComponent implements OnInit {
 
   ngOnInit() {
   }
-  
-
 }

@@ -1,93 +1,93 @@
-import { WSAEINVALIDPROVIDER } from "constants";
+import { WSAEINVALIDPROVIDER } from 'constants';
 
-export class GoalSelect{
+export class GoalSelect {
     goalname: string;
     priority: string;
-    price:string;
+    price: string;
     notes: string;
     loanrequire: string;
     creationdate: string;
 }
-export class EducationSelect{
+export class EducationSelect {
     goalname: string;
     priority: string;
-    price:string;
-    duration:string;
+    price: string;
+    duration: string;
     notes: string;
     loanrequire: string;
     creationdate: string;
 }
-export class VehicleSelect{
+export class VehicleSelect {
     goalname: string;
     priority: string;
-    price:string;
+    price: string;
     notes: string;
     loanrequire: string;
     creationdate: string;
 }
-export class ChildBirthSelect{
+export class ChildBirthSelect {
     goalname: string;
     priority: string;
-    price:string;
+    price: string;
     notes: string;
     loanrequire: string;
     creationdate: string;
 }
-export class MerrageSelect{
+export class MerrageSelect {
     goalname: string;
     priority: string;
-    price:string;
+    price: string;
     notes: string;
     loanrequire: string;
     creationdate: string;
 }
-export class BusinessSelect{
+export class BusinessSelect {
     goalname: string;
     priority: string;
-    price:string;
+    price: string;
     notes: string;
     loanrequire: string;
     creationdate: string;
 }
-export class FamilySupportSelect{
+export class FamilySupportSelect {
     goalname: string;
     priority: string;
-    price:string;
+    price: string;
     notes: string;
     loanrequire: string;
     creationdate: string;
 }
-export class VacationSelect{
+export class VacationSelect {
     goalname: string;
     priority: string;
-    price:string;
+    price: string;
     notes: string;
     loanrequire: string;
     creationdate: string;
 }
-export class EmergencyFundSelect{
+export class EmergencyFundSelect {
     goalname: string;
     priority: string;
-    price:string;
+    price: string;
     notes: string;
     loanrequire: string;
     creationdate: string;
 }
-export class RetirementFundSelect{
+export class RetirementFundSelect {
     goalname: string;
     priority: string;
-    price:string;
-    duration:string;
+    price: string;
+    duration: string;
     notes: string;
     loanrequire: string;
     creationdate: string;
 }
-export class NewGoalSelect{
+export class NewGoalSelect {
     goalname: string;
     priority: string;
-    price:string;
+    price: string;
     notes: string;
-    loantype:string;
+    loantype: string;
     loanrequire: string;
     creationdate: string;
 }

@@ -2,28 +2,26 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/observable';
 import { SERVER_API_URL } from '../../app.constants';
-import { GoalSelect,EducationSelect,VehicleSelect, ChildBirthSelect, MerrageSelect, NewGoalSelect, RetirementFundSelect, EmergencyFundSelect, VacationSelect, FamilySupportSelect, BusinessSelect} from './goalselect.model';
+// tslint:disable-next-line:max-line-length
+import { GoalSelect, EducationSelect, VehicleSelect, ChildBirthSelect, MerrageSelect, NewGoalSelect, RetirementFundSelect, EmergencyFundSelect, VacationSelect, FamilySupportSelect, BusinessSelect} from './goalselect.model';
 @Injectable()
-export class GoalselectService 
-{
+export class GoalselectService {
 
   constructor(private http: HttpClient) {
 
    }
-  public saveHome(GOALSELECT:any[])
-  {
+  public saveHome(GOALSELECT: any[]) {
     // console.log(goalselect.goalname);
     // console.log(goalselect.priority);
     // console.log(goalselect.price);
     // console.log(goalselect.notes);
     // console.log(goalselect.loanrequire);
     // console.log(goalselect.creationdate);
-    //return this.http.post<EducationSelect[]>(SERVER_API_URL + 'api/',Goalselect);
-    return this.http.post('https://myproject-577cd.firebaseio.com/data.json',GOALSELECT);
+    // return this.http.post<EducationSelect[]>(SERVER_API_URL + 'api/',Goalselect);
+    return this.http.post('https://myproject-577cd.firebaseio.com/data.json', GOALSELECT);
   }
 
-  public saveEducation(EDUCATIONSELECT:any[])
-  {
+  public saveEducation(EDUCATIONSELECT: any[]) {
     // console.log(Educationselect.goalname);
     // console.log(Educationselect.priority);
     // console.log(Educationselect.price);
@@ -32,11 +30,10 @@ export class GoalselectService
     // console.log(Educationselect.loanrequire);
     // console.log(Educationselect.creationdate);
 
-    //return this.http.post<EducationSelect[]>(SERVER_API_URL + 'api/',Educationselect);
-    return this.http.post('https://myproject-577cd.firebaseio.com/data.json',EDUCATIONSELECT);
+    // return this.http.post<EducationSelect[]>(SERVER_API_URL + 'api/',Educationselect);
+    return this.http.post('https://myproject-577cd.firebaseio.com/data.json', EDUCATIONSELECT);
   }
-  public saveVehicle(VEHICLESELECT)
-  {
+  public saveVehicle(VEHICLESELECT) {
     // console.log(Vehicleselect.goalname);
     // console.log(Vehicleselect.priority);
     // console.log(Vehicleselect.price);
@@ -44,11 +41,10 @@ export class GoalselectService
     // console.log(Vehicleselect.loanrequire);
     // console.log(Vehicleselect.creationdate);
 
-    //return this.http.post<VehicleSelect[]>(SERVER_API_URL + 'api/',Vehicleselect);
-    return this.http.post('https://myproject-577cd.firebaseio.com/data.json',VEHICLESELECT);
+    // return this.http.post<VehicleSelect[]>(SERVER_API_URL + 'api/',Vehicleselect);
+    return this.http.post('https://myproject-577cd.firebaseio.com/data.json', VEHICLESELECT);
   }
-  public saveChildbirth(CHILDBIRTHSELECT)
-  {
+  public saveChildbirth(CHILDBIRTHSELECT) {
     // console.log(Childbirthselect.goalname);
     // console.log(Childbirthselect.priority);
     // console.log(Childbirthselect.price);
@@ -56,10 +52,10 @@ export class GoalselectService
     // console.log(Childbirthselect.loanrequire);
     // console.log(Childbirthselect.creationdate);
 
-    //return this.http.post<ChildBirthSelect[]>(SERVER_API_URL + 'api/',Childbirthselect);
-    return this.http.post('https://myproject-577cd.firebaseio.com/data.json',CHILDBIRTHSELECT);
+    // return this.http.post<ChildBirthSelect[]>(SERVER_API_URL + 'api/',Childbirthselect);
+    return this.http.post('https://myproject-577cd.firebaseio.com/data.json', CHILDBIRTHSELECT);
   }
-  public saveMerrage(MERRAGESELECT){
+  public saveMerrage(MERRAGESELECT) {
     // console.log(MerrageSelect.goalname);
     // console.log(MerrageSelect.priority);
     // console.log(MerrageSelect.price);
@@ -68,9 +64,9 @@ export class GoalselectService
     // console.log(MerrageSelect.creationdate);
 
    // return this.http.post<MerrageSelect[]>(SERVER_API_URL + 'api/',MerrageSelect);
-   return this.http.post('https://myproject-577cd.firebaseio.com/data.json',MERRAGESELECT);
+   return this.http.post('https://myproject-577cd.firebaseio.com/data.json', MERRAGESELECT);
   }
-  public saveBusiness(BUSINESSSELECT){
+  public saveBusiness(BUSINESSSELECT) {
     // console.log(Businessselect.goalname);
     // console.log(Businessselect.priority);
     // console.log(Businessselect.price);
@@ -78,10 +74,10 @@ export class GoalselectService
     // console.log(Businessselect.loanrequire);
     // console.log(Businessselect.creationdate);
 
-    //return this.http.post<BusinessSelect[]>(SERVER_API_URL + 'api/',Businessselect);
-    return this.http.post('https://myproject-577cd.firebaseio.com/data.json',BUSINESSSELECT);
+    // return this.http.post<BusinessSelect[]>(SERVER_API_URL + 'api/',Businessselect);
+    return this.http.post('https://myproject-577cd.firebaseio.com/data.json', BUSINESSSELECT);
   }
-  public saveFamilysup(FAMILYSUPSELECT){
+  public saveFamilysup(FAMILYSUPSELECT) {
     // console.log(FamilySupportselect.goalname);
     // console.log(FamilySupportselect.priority);
     // console.log(FamilySupportselect.price);
@@ -89,10 +85,10 @@ export class GoalselectService
     // console.log(FamilySupportselect.loanrequire);
     // console.log(FamilySupportselect.creationdate);
 
-    //return this.http.post<FamilySupportSelect[]>(SERVER_API_URL + 'api/',FamilySupportselect);
-    return this.http.post('https://myproject-577cd.firebaseio.com/data.json',FAMILYSUPSELECT);
+    // return this.http.post<FamilySupportSelect[]>(SERVER_API_URL + 'api/',FamilySupportselect);
+    return this.http.post('https://myproject-577cd.firebaseio.com/data.json', FAMILYSUPSELECT);
   }
-  public saveVacation( VACATIONSELECT){
+  public saveVacation( VACATIONSELECT) {
     // console.log( Vacationselect.goalname);
     // console.log( Vacationselect.priority);
     // console.log( Vacationselect.price);
@@ -101,9 +97,9 @@ export class GoalselectService
     // console.log( Vacationselect.creationdate);
 
    // return this.http.post<VacationSelect[]>(SERVER_API_URL + 'api/',Vacationselect);
-   return this.http.post('https://myproject-577cd.firebaseio.com/data.json',VACATIONSELECT);
+   return this.http.post('https://myproject-577cd.firebaseio.com/data.json', VACATIONSELECT);
   }
-  public  saveEmergencyFund(EMERGENCYSELECT){
+  public  saveEmergencyFund(EMERGENCYSELECT) {
     // console.log(EmergencyFundselect.goalname);
     // console.log(EmergencyFundselect.priority);
     // console.log(EmergencyFundselect.price);
@@ -111,10 +107,10 @@ export class GoalselectService
     // console.log(EmergencyFundselect.loanrequire);
     // console.log(EmergencyFundselect.creationdate);
 
-    //return this.http.post<EmergencyFundSelect[]>(SERVER_API_URL + 'api/',EmergencyFundselect);
-    return this.http.post('https://myproject-577cd.firebaseio.com/data.json',EMERGENCYSELECT);
+    // return this.http.post<EmergencyFundSelect[]>(SERVER_API_URL + 'api/',EmergencyFundselect);
+    return this.http.post('https://myproject-577cd.firebaseio.com/data.json', EMERGENCYSELECT);
   }
-  public saveRetairementFund(RETIREMENTSELECT){
+  public saveRetairementFund(RETIREMENTSELECT) {
     // console.log(RetirementFundselect.goalname);
     // console.log(RetirementFundselect.priority);
     // console.log(RetirementFundselect.price);
@@ -123,10 +119,10 @@ export class GoalselectService
     // console.log(RetirementFundselect.loanrequire);
     // console.log(RetirementFundselect.creationdate);
 
-    //return this.http.post<RetirementFundSelect[]>(SERVER_API_URL + 'api/',RetirementFundselect);
-    return this.http.post('https://myproject-577cd.firebaseio.com/data.json',RETIREMENTSELECT);
+    // return this.http.post<RetirementFundSelect[]>(SERVER_API_URL + 'api/',RetirementFundselect);
+    return this.http.post('https://myproject-577cd.firebaseio.com/data.json', RETIREMENTSELECT);
   }
-  public saveNewGoal(NEWGOALSELECT){
+  public saveNewGoal(NEWGOALSELECT) {
     // console.log(NewGoalselect.goalname);
     // console.log(NewGoalselect.priority);
     // console.log(NewGoalselect.price);
@@ -135,9 +131,8 @@ export class GoalselectService
     // console.log(NewGoalselect.loanrequire);
     // console.log(NewGoalselect.creationdate);
 
-    //return this.http.post<NewGoalSelect[]>(SERVER_API_URL + 'api/',NewGoalselect);
-    return this.http.post('https://myproject-577cd.firebaseio.com/data.json',NEWGOALSELECT);
+    // return this.http.post<NewGoalSelect[]>(SERVER_API_URL + 'api/',NewGoalselect);
+    return this.http.post('https://myproject-577cd.firebaseio.com/data.json', NEWGOALSELECT);
   }
 
 }
-

@@ -2,7 +2,7 @@
 
 // import { FamilyprofileComponent } from './familyprofile.component';
 
-// export const familyProfileRoute: Route = 
+// export const familyProfileRoute: Route =
 // {
 //     path: 'familyprofile',
 //     component: FamilyprofileComponent,

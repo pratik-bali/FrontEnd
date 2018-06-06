@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router,Route } from '@angular/router';
+import { Router, Route } from '@angular/router';
 import { Principal } from '../shared';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { first } from 'rxjs/operator/first';
@@ -11,7 +11,7 @@ import { first } from 'rxjs/operator/first';
 })
 export class GoalComponent implements OnInit {
 
-  constructor( private router:Router) { }
+  constructor( private router: Router) { }
 
   // fieldArray = [];
   // resource = '';
@@ -24,7 +24,7 @@ export class GoalComponent implements OnInit {
   ngOnInit() {
   }
 
-  selectgoals(){
+  selectgoals() {
   this.router.navigate(['goalselect']);
   }
 

@@ -6,7 +6,7 @@
 //   styles: []
 // })
 // export class SubscriberComponent implements OnInit {
-import { Router,Route } from '@angular/router';
+import { Router, Route } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { JhiEventManager } from 'ng-jhipster';
@@ -28,7 +28,7 @@ export class SubscriberComponent implements OnInit {
         private principal: Principal,
         private loginModalService: LoginModalService,
         private eventManager: JhiEventManager,
-        private router:Router
+        private router: Router
     ) {
     }
 
@@ -54,7 +54,7 @@ export class SubscriberComponent implements OnInit {
     login() {
         this.modalRef = this.loginModalService.open();
     }
-    register(){
+    register() {
         this.router.navigate(['register']);
     }
 }

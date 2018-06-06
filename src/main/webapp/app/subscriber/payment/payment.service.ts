@@ -10,6 +10,6 @@ export class PaymentService {
   constructor(private http: HttpClient) { }
 
   submitUser(user): Observable<User[]> {
-     return this.http.post<User[]>(SERVER_API_URL + 'api/payment/payment',user);
+     return this.http.post<User[]>(SERVER_API_URL + 'api/payment/payment', user);
   }
 }

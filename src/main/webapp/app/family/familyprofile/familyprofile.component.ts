@@ -11,6 +11,4 @@ export class FamilyprofileComponent implements OnInit {
 
   ngOnInit() {
   }
- 
-
 }

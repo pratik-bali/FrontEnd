@@ -2,15 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/observable';
 import { SERVER_API_URL } from './../app.constants';
-import { Myprofile,Familyprofile,Assumption} from './family.modal'; 
+import { Myprofile, Familyprofile, Assumption} from './family.modal';
 
 @Injectable()
 export class FamilyserviceService {
 
   constructor( private http: HttpClient) {}
 
-  public saveDetails(MyProfile:any[])
-  {
+  public saveDetails(MyProfile: any[]) {
     // console.log(myProfile.fname);
     // console.log(myProfile.mname);
     // console.log(myProfile.lname);
@@ -30,12 +29,11 @@ export class FamilyserviceService {
     // console.log(myProfile.city);
     // console.log(myProfile.pin);
 
-
-      //return this.http.post<Myprofile[]>('https://myapplication-f53b5.firebaseio.com/data.json',servers);
-      return this.http.post('https://myproject-577cd.firebaseio.com/data.json',MyProfile);
+      // return this.http.post<Myprofile[]>('https://myapplication-f53b5.firebaseio.com/data.json',servers);
+      return this.http.post('https://myproject-577cd.firebaseio.com/data.json', MyProfile);
   }
-  public saveFPdetail(Familyprofile:any[])
-  {
+  // tslint:disable-next-line:no-shadowed-variable
+  public saveFPdetail(Familyprofile: any[])  {
     // console.log("inside familyprofile service details");
     // console.log(familyProfile.relationship);
     // console.log(familyProfile.fsname);
@@ -45,11 +43,11 @@ export class FamilyserviceService {
     // console.log(familyProfile.dob);
     // console.log(familyProfile.check);
 
-    //return this.http.post<Familyprofile[]>(SERVER_API_URL + 'api/',familyProfile);
-    return this.http.put('https://myproject-577cd.firebaseio.com/data.json',Familyprofile);
+    // return this.http.post<Familyprofile[]>(SERVER_API_URL + 'api/',familyProfile);
+    return this.http.put('https://myproject-577cd.firebaseio.com/data.json', Familyprofile);
   }
-  public saveAssumption(Assumption:any[])
- {
+  // tslint:disable-next-line:no-shadowed-variable
+  public saveAssumption(Assumption: any[]) {
 //   console.log("inside Assumption service details");
 //   console.log(assumption.BRrateOfReturn);
 //   console.log(assumption.BRinflation);
@@ -61,8 +59,6 @@ export class FamilyserviceService {
 //   console.log(assumption.SurplusPercentInsurance);
 //   console.log(assumption.AgeOfRetirement);
 //   console.log(assumption.LifeExpentancy);
-  return this.http.post('https://myproject-577cd.firebaseio.com/data.json',Assumption);
+  return this.http.post('https://myproject-577cd.firebaseio.com/data.json', Assumption);
 }
 }
-
-

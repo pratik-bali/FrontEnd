@@ -5,7 +5,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Ng2Webstorage, LocalStorageService, SessionStorageService  } from 'ngx-webstorage';
 import { JhiEventManager } from 'ng-jhipster';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthInterceptor } from './blocks/interceptor/auth.interceptor';
 import { AuthExpiredInterceptor } from './blocks/interceptor/auth-expired.interceptor';
 import { ErrorHandlerInterceptor } from './blocks/interceptor/errorhandler.interceptor';
@@ -13,47 +12,26 @@ import { NotificationInterceptor } from './blocks/interceptor/notification.inter
 import { BuckswiseFrontEndSharedModule, UserRouteAccessService } from './shared';
 import { BuckswiseFrontEndAppRoutingModule} from './app-routing.module';
 import { BuckswiseFrontEndHomeModule } from './home/home.module';
-<<<<<<< HEAD
-=======
 
 import { BuckswiseFrontEndPratikModule } from './pratik/pratik.module';
 import { BuckswiseFrontEndDemoModule } from './demo/demo.module';
 import { BuckswiseAppSheetalModule } from './sheetal/sheetal.module';
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
->>>>>>> 17a22a215a62a48b1d0a25b2a21e8f3b5348c2cc
 import { BuckswiseFrontEndAdminModule } from './admin/admin.module';
 import { BuckswiseFrontEndAccountModule } from './account/account.module';
 import { BuckswiseFrontEndEntityModule } from './entities/entity.module';
 import { PaginationConfig } from './blocks/config/uib-pagination.config';
-<<<<<<< HEAD
 
-// import { FamilyModule } from './family/family.module';
-// import { GoalModule } from './goal/goal.module';
-// // import { SubscribeModule } from './subscribe/subscribe.module';
-// import { SubscriberModule } from './subscriber/subscriber.module';
-// import { BuckswiseFrontEndRiskModule } from './risk/risk.module';
-// import { RiskComponent } from './risk/risk.component';
-// import { BuckswiseFrontEndMyAssetsModule } from './my-assets/my-assets.module';
-
-=======
 import { Routes } from '@angular/router';
-import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BuckswiseFrontEndMyAssetsModule } from './my-assets/my-assets.module';
-//import { GoalSelectComponent }
-// import { MyprofileComponent } from './family/myprofile/myprofile.component';
-// import { FamilyprofileComponent } from './family/familyprofile/familyprofile.component';
-    import { FamilyModule } from './family/family.module';
-    import { GoalModule } from './goal/goal.module';
-    import { SubscribeModule } from './subscribe/subscribe.module';
-    import { SubscriberModule } from './subscriber/subscriber.module';
-    import { BuckswiseFrontEndRiskModule } from './risk/risk.module';
-    import { RiskComponent } from './risk/risk.component';
-    //import { PaymentComponent } from './subscriber/payment/payment.component';
-    import { BuckswiseFrontEndPratikModule } from './pratik/pratik.module';
->>>>>>> 623aa2352f194cb38c9faa769ccf4b2649993e9e
-// jhipster-needle-angular-add-module-import JHipster will add new module here
+import { FamilyModule } from './family/family.module';
+import { GoalModule } from './goal/goal.module';
+import { SubscribeModule } from './subscribe/subscribe.module';
+import { SubscriberModule } from './subscriber/subscriber.module';
+import { BuckswiseFrontEndRiskModule } from './risk/risk.module';
+import { RiskComponent } from './risk/risk.component';
 import {
     JhiMainComponent,
     NavbarComponent,
@@ -65,8 +43,8 @@ import {
 import { SuccessComponent } from './success/success.component';
 import { FailComponent } from './fail/fail.component';
 // import { SubscriberComponent } from './subscriber/subscriber.component';
-//import { SubscribeComponent } from './subscribe/subscribe.component';
-//import { GoalComponent } from './goal/goal.component';
+// import { SubscribeComponent } from './subscribe/subscribe.component';
+// import { GoalComponent } from './goal/goal.component';
 
 @NgModule({
     imports: [
@@ -78,31 +56,19 @@ import { FailComponent } from './fail/fail.component';
         BuckswiseFrontEndAdminModule,
         BuckswiseFrontEndAccountModule,
         BuckswiseFrontEndEntityModule,
-<<<<<<< HEAD
+
         BuckswiseFrontEndMyAssetsModule,
-        BuckswiseFrontEndRiskModule,     
+        BuckswiseFrontEndRiskModule,
         FamilyModule,
         FormsModule,
         BsDatepickerModule.forRoot(),
         GoalModule,
         SubscribeModule,
         SubscriberModule,
-        BuckswiseFrontEndPratikModule
-
-=======
+        BuckswiseFrontEndPratikModule,
         BuckswiseFrontEndDemoModule,
-<<<<<<< HEAD
         BuckswiseAppSheetalModule,
-        // BuckswiseFrontEndMyAssetsModule,
-        // BuckswiseFrontEndRiskModule,
-        // FamilyModule,
-        // FormsModule,
-        // GoalModule,
-
-=======
         BuckswiseAppSheetalModule
->>>>>>> 17a22a215a62a48b1d0a25b2a21e8f3b5348c2cc
->>>>>>> 623aa2352f194cb38c9faa769ccf4b2649993e9e
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [
@@ -111,19 +77,9 @@ import { FailComponent } from './fail/fail.component';
         ErrorComponent,
         PageRibbonComponent,
         FooterComponent,
-<<<<<<< HEAD
-        // RiskComponent
-=======
         SuccessComponent,
         FailComponent,
         RiskComponent
-       // PaymentComponent
-        // SubscriberComponent
-        // GoalComponent
-       
-        // MyprofileComponent,
-        // FamilyprofileComponent
->>>>>>> 623aa2352f194cb38c9faa769ccf4b2649993e9e
     ],
     providers: [
         ProfileService,
@@ -170,4 +126,3 @@ import { FailComponent } from './fail/fail.component';
     ],
 })
 export class BuckswiseFrontEndAppModule {}
-

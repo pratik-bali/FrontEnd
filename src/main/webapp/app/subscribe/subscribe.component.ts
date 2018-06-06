@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router,Route } from '@angular/router';
+import { Router, Route } from '@angular/router';
 
 @Component({
   selector: 'jhi-subscribe',
@@ -8,11 +8,11 @@ import { Router,Route } from '@angular/router';
 })
 export class SubscribeComponent implements OnInit {
 
-  constructor( private router:Router)  { }
+  constructor( private router: Router)  { }
 
   ngOnInit() {
   }
-  pay(){
+  pay() {
     this.router.navigate(['subscriber']);
   }
 

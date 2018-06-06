@@ -2,7 +2,6 @@
 
 // // import {
 // //     goalSelectRoute
-    
 // // } from './';
 
 // // const GOAL_ROUTES = [
@@ -19,15 +18,14 @@ import { UserRouteAccessService } from '../shared';
 import { GoalComponent } from './';
 // import { GoalSelectComponent } from './Goal-select/goalselect.component';
 
-export const goalRoot: Route = 
-{
+export const goalRoot: Route = {
     path: 'goal',
     component: GoalComponent,
     data: {
         authorities: [],
         pageTitle: 'goal.title'
     },
-   }; 
+   };
 // import { Routes } from '@angular/router';
 
 // import {
@@ -43,4 +41,3 @@ export const goalRoot: Route =
 //     component: GoalComponent,
 //     children: ACCOUNT_ROUTES
 // }];
-

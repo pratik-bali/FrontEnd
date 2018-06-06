@@ -1,5 +1,5 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { RouterModule,Route } from '@angular/router';
+import { RouterModule, Route } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BuckswiseFrontEndSharedModule } from '../shared';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
@@ -21,7 +21,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
         imports: [
             RouterModule.forRoot([ goalRoot ], { useHash: true }),
             BsDatepickerModule.forRoot(),
-            FormsModule,CommonModule
+            FormsModule, CommonModule
         ],
         declarations: [
             GoalComponent,

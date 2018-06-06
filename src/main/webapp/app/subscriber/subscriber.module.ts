@@ -5,7 +5,7 @@ import { SubscriberComponent } from './subscriber.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { CommonModule } from '@angular/common';
 import { subscriberRoute } from './subscriber.route';
-import { PaymentComponent,PaymentService } from '.';
+import { PaymentComponent, PaymentService } from '.';
 // import { FooterComponent } from '../layouts';
 @NgModule({
     imports: [
