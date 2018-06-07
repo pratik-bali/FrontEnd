@@ -30,8 +30,8 @@
             </li>
 -->
 
-            <!-- Pratik code start here-->
-            <!-- <li  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <!-- separate menu-->
+            <li  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="entity-menu">
                     <span> <i class="fa fa-th-list" aria-hidden="true"></i><span> Pratik</span></span>
                 </a>
@@ -50,42 +50,14 @@
                         </a>
                     </li>
                     <li>
-                        <a class="dropdown-item" routerLink="subscription" routerLinkActive="active" (click)="collapseNavbar()">
+                        <a class="dropdown-item" routerLink="subscribe" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-tachometer" aria-hidden="true"></i>
                             <span>Subscription</span>
                         </a>
                     </li>
                 </ul>
-            </li> -->
-
-            <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                <a class="nav-link" routerLink="spend" (click)="collapseNavbar()">
-                    <span>
-                        <i class="fa fa-heart" aria-hidden="true"></i>
-                        <span>Spending</span>
-                    </span>
-                </a>
-            </li>
-            <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                <a class="nav-link" routerLink="how" (click)="collapseNavbar()">
-                    <span>
-                        <i class="fa fa-heart" aria-hidden="true"></i>
-                        <span>How it Works</span>
-                    </span>
-                </a>
-            </li>
-            <!-- <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                <a class="nav-link" routerLink="subscription" (click)="collapseNavbar()">
-                    <span>
-                        <i class="fa fa-heart" aria-hidden="true"></i>
-                        <span>Subscription</span>
-                    </span>
-                </a>
-            </li> -->
-             <!-- Pratik code ends here-->
-
-             <!-- Sheetal code start here-->
-             <li  ngbDropdown class="nav-item dropdown pointer" 
+            </li> 
+            <li  ngbDropdown class="nav-item dropdown pointer" 
              routerLinkActive="active" >
                  <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="entity-menu">
                      <span>
@@ -96,7 +68,6 @@
                      </span>
                  </a>
                  <ul class="dropdown-menu" ngbDropdownMenu>
-                     <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
                      <li>
                          <a class="dropdown-item" routerLink="main" routerLinkActive="active" (click)="collapseNavbar()">
                              <i class="fa fa-fw fa-user" aria-hidden="true"></i>
@@ -122,31 +93,100 @@
                          </a>
                      </li>
                  </ul>
-             </li>
-             <!-- Sheetal code end here-->
+            </li>
+            <li  ngbDropdown class="nav-item dropdown pointer" 
+             routerLinkActive="active" >
+                 <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="entity-menu">
+                     <span>
+                         <i class="fa fa-th-list" aria-hidden="true"></i>
+                         <span>
+                             Sanjay
+                         </span>
+                     </span>
+                 </a>
+                 <ul class="dropdown-menu" ngbDropdownMenu>
+                    <li>
+                        <a class="dropdown-item" routerLink="/myfamily" (click)="collapseNavbar()">
+                            <span>
+                                <i class="fa fa-home" aria-hidden="true"></i>
+                                <span>family</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a  class="dropdown-item" routerLink="/goal" (click)="collapseNavbar()">
+                            <span>
+                                <i class="fa fa-home" aria-hidden="true"></i>
+                                <span>Goal</span>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li  ngbDropdown class="nav-item dropdown pointer" 
+             routerLinkActive="active" >
+                 <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="entity-menu">
+                     <span>
+                         <i class="fa fa-th-list" aria-hidden="true"></i>
+                         <span>
+                             Neeta
+                         </span>
+                     </span>
+                 </a>
+                 <ul class="dropdown-menu" ngbDropdownMenu>
+                    <li>
+                        <a  class="dropdown-item" routerLink="assets" (click)="collapseNavbar()">
+                            <span>
+                                <i class="fa fa-home" aria-hidden="true"></i>
+                                <span>Assets & Liabilities</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a  class="dropdown-item" routerLink="risk" (click)="collapseNavbar()">
+                            <span>
+                                <i class="fa fa-home" aria-hidden="true"></i>
+                                <span>Risk</span>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!-- separate menu end -->
+           
 
-             <!-- Sanjay code start-->
+
+            <!-- all integrated navbar -->
+            <!--
+                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <a class="nav-link" routerLink="spend" (click)="collapseNavbar()">
+                    <span>
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                        <span>Spending</span>
+                    </span>
+                </a>
+            </li>
+            <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <a class="nav-link" routerLink="how" (click)="collapseNavbar()">
+                    <span>
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                        <span>How it Works</span>
+                    </span>
+                </a>
+            </li>
+            <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <a class="nav-link" routerLink="subscription" (click)="collapseNavbar()">
+                    <span>
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                        <span>Subscription</span>
+                    </span>
+                </a>
+            </li> 
              <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <a class="nav-link" routerLink="/myfamily" (click)="collapseNavbar()">
                     <span>
                         <i class="fa fa-home" aria-hidden="true"></i>
                         <span>family</span>
-                    </span>
-                </a>
-            </li>
-            <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                <a class="nav-link" routerLink="assets" (click)="collapseNavbar()">
-                    <span>
-                        <i class="fa fa-home" aria-hidden="true"></i>
-                        <span>Assets & Liabilities</span>
-                    </span>
-                </a>
-            </li>
-            <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                <a class="nav-link" routerLink="risk" (click)="collapseNavbar()">
-                    <span>
-                        <i class="fa fa-home" aria-hidden="true"></i>
-                        <span>Risk</span>
                     </span>
                 </a>
             </li>
@@ -157,12 +197,30 @@
                         <span>Goal</span>
                     </span>
                 </a>
+            </li> 
+            <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <a class="nav-link" routerLink="assets" (click)="collapseNavbar()">
+                            <span>
+                                <i class="fa fa-home" aria-hidden="true"></i>
+                                <span>Assets & Liabilities</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <a class="nav-link" routerLink="risk" (click)="collapseNavbar()">
+                            <span>
+                                <i class="fa fa-home" aria-hidden="true"></i>
+                                <span>Risk</span>
+                            </span>
+                        </a>
             </li>
+            -->
+            
 
-             <!-- Sanjay code ends -->
+            <!-- entity -->
 
             <!-- jhipster-needle-add-element-to-menu - JHipster will add new menu items here -->
-            <li *ngSwitchCase="true" ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <!-- <li *ngSwitchCase="true" ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="entity-menu">
                     <span>
                         <i class="fa fa-th-list" aria-hidden="true"></i>
@@ -172,18 +230,12 @@
                     </span>
                 </a>
                 <ul class="dropdown-menu" ngbDropdownMenu>
-                    <li>
-                        <a class="dropdown-item" routerLink="demoentity" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
-                            <span>Demoentity</span>
-                        </a>
-                    </li>
-                    
                     
                 </ul>
-            </li>
+            </li> -->
             
-            <!-- <li *jhiHasAnyAuthority="'ROLE_ADMIN'" ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <!-- admin role -->
+            <li *jhiHasAnyAuthority="'ROLE_ADMIN'" ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="admin-menu">
                     <span>
                         <i class="fa fa-user-plus" aria-hidden="true"></i>
@@ -235,8 +287,9 @@
                     </li>
                     
                 </ul>
-            </li> -->
+            </li>
 
+            <!-- account -->
             <li ngbDropdown class="nav-item dropdown pointer" placement="bottom-right" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="account-menu">
                   <span *ngIf="!getImageUrl()">

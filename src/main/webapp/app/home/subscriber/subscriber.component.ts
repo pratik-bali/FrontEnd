@@ -12,7 +12,7 @@ import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { JhiEventManager } from 'ng-jhipster';
 import {PaymentComponent} from './payment/payment.component';
 
-import { Account, LoginModalService, Principal } from '../shared';
+import { Account, LoginModalService, Principal } from '../../shared';
 
 @Component({
     selector: 'jhi-subscriber',
