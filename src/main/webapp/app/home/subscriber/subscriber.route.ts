@@ -1,5 +1,5 @@
 import { Route } from '@angular/router';
-import { UserRouteAccessService } from '../shared';
+import { UserRouteAccessService } from '../../shared';
 import { SubscriberComponent } from './subscriber.component';
 
 export const subscriberRoute: Route = {

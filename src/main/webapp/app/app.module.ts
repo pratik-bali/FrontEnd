@@ -28,8 +28,8 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BuckswiseFrontEndMyAssetsModule } from './my-assets/my-assets.module';
 import { FamilyModule } from './family/family.module';
 import { GoalModule } from './goal/goal.module';
-import { SubscribeModule } from './subscribe/subscribe.module';
-import { SubscriberModule } from './subscriber/subscriber.module';
+// import { SubscribeModule } from './subscribe/subscribe.module';
+// import { SubscriberModule } from './subscriber/subscriber.module';
 import { BuckswiseFrontEndRiskModule } from './risk/risk.module';
 import { RiskComponent } from './risk/risk.component';
 import {
@@ -63,8 +63,8 @@ import { FailComponent } from './fail/fail.component';
         FormsModule,
         BsDatepickerModule.forRoot(),
         GoalModule,
-        SubscribeModule,
-        SubscriberModule,
+        // SubscribeModule,
+        // SubscriberModule,
         BuckswiseFrontEndPratikModule,
         BuckswiseFrontEndDemoModule,
         BuckswiseAppSheetalModule,

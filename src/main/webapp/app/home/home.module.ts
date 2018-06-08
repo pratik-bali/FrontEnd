@@ -13,10 +13,14 @@ import { SubscriptionComponent } from './subscription/subscription.component';
 import { ReferComponent } from './refer/refer.component';
 import { HowDoWeDoItComponent } from './how-do-we-do-it/how-do-we-do-it.component';
 import { PartnersComponent } from './partners/partners.component';
+import { SubscriptionModule } from './subscription/subscribe.module';
+import { SubscriberModule } from './subscriber/subscriber.module';
 
 @NgModule({
     imports: [
         BuckswiseFrontEndSharedModule,
+        SubscriptionModule,
+        SubscriberModule,
         RouterModule.forChild([ HOME_ROUTE ])
     ],
     declarations: [
