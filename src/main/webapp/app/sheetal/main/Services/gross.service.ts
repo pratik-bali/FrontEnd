@@ -13,19 +13,19 @@ export class GrossService {
 
   public ServiceGross(gross) {
 
-    console.log(gross.bsalary);
-    console.log(gross.da);
-    console.log(gross.hra);
-    console.log(gross.conveyance);
-    console.log(gross.childedu);
-    console.log(gross.medical);
-    console.log(gross.lta);
-    console.log(gross.otherallown);
-    console.log(gross.bonus);
-    console.log(gross.rentincome);
-    console.log(gross.saving);
-    console.log(gross.bonds);
-    console.log(gross.convay);
+    console.log(gross.Bsalary);
+    console.log(gross.Da);
+    console.log(gross.Hra);
+    console.log(gross.Conveyance);
+    console.log(gross.Childedu);
+    console.log(gross.Medical);
+    console.log(gross.Lta);
+    console.log(gross.Otherallown);
+    console.log(gross.Bonus);
+    console.log(gross.Rentincome);
+    console.log(gross.Saving);
+    console.log(gross.Bonds);
+    console.log(gross.Convay);
 
     return this.http.post<Gross[]>(SERVER_API_URL + 'api/', gross);
   }

@@ -12,12 +12,12 @@ export class OtherService {
   constructor(private http: HttpClient) { }
 
   public ServiceOther(other) {
-    console.log(other.handicapped);
-    console.log(other.medicaltreat);
-    console.log(other.selfedu);
-    console.log(other.nps);
-    console.log(other.rgess);
-    console.log(other.donation);
+    console.log(other.Handicapped);
+    console.log(other.Medicaltreat);
+    console.log(other.Selfedu);
+    console.log(other.Nps);
+    console.log(other.Rgess);
+    console.log(other.Donation);
 
     return this.http.post<Other[]>(SERVER_API_URL + 'api/', other);
 

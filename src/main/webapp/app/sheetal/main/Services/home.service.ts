@@ -13,11 +13,11 @@ export class HomeService {
 
   public ServiceHome(home) {
 
-    console.log(home.homeloan);
-    console.log(home.prncpalloan);
-    console.log(home.rentclm);
-    console.log(home.remintrst);
-    console.log(home.rentclmgg);
+    console.log(home.Homeloan);
+    console.log(home.Prncpalloan);
+    console.log(home.Rentclm);
+    console.log(home.Remintrst);
+    console.log(home.Rentclmgg);
 
     return this.http.post<Home[]>(SERVER_API_URL + 'api/', home);
 

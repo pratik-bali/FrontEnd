@@ -31,6 +31,19 @@ user: User= new User();
   });
 //    Validation for name
 //    Validation for email
+$('#email').focusout(function() {
+  const email_regex = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
+  const email = $('#email').val();
+  const elem = ($('#email').val());
+  if (elem.length === 0) {
+      alert('This field cannot be left blank.');
+  } else {
+      if ((!email.match(email_regex))) {
+          alert('Enter valid email address.');
+          return false;
+      }
+  }
+});
 
 //    Validation for mobile
   $('#phone').keydown(function(e) {
