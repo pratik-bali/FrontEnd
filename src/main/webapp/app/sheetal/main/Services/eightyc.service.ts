@@ -12,19 +12,19 @@ export class EightycService {
   constructor(private http: HttpClient) { }
 
   public ServiceEightyc(eightyc) {
-    console.log(eightyc.fixed);
-    console.log(eightyc.tution);
-    console.log(eightyc.nsc);
-    console.log(eightyc.nss);
-    console.log(eightyc.post);
-    console.log(eightyc.reinvest);
-    console.log(eightyc.licpremium);
-    console.log(eightyc.equity);
-    console.log(eightyc.pf);
-    console.log(eightyc.ppf);
-    console.log(eightyc.other);
-    console.log(eightyc.tutionfee);
-    console.log(eightyc.ulip);
+    console.log(eightyc.Fixed);
+    console.log(eightyc.Tution);
+    console.log(eightyc.Nsc);
+    console.log(eightyc.Nss);
+    console.log(eightyc.Post);
+    console.log(eightyc.Reinvest);
+    console.log(eightyc.Licpremium);
+    console.log(eightyc.Equity);
+    console.log(eightyc.Pf);
+    console.log(eightyc.Ppf);
+    console.log(eightyc.Other);
+    console.log(eightyc.Tutionfee);
+    console.log(eightyc.Ulip);
 
     return this.http.post<Eightyc[]>(SERVER_API_URL + 'api/', eightyc);
   }

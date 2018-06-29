@@ -13,9 +13,9 @@ export class EightydService {
 
   public ServiceEightyd(eightyd) {
 
-    console.log(eightyd.insureself);
-    console.log(eightyd.insureparents);
-    console.log(eightyd.health);
+    console.log(eightyd.Insureself);
+    console.log(eightyd.Insureparents);
+    console.log(eightyd.Health);
 
     return this.http.post<Eightyd[]>(SERVER_API_URL + 'api/', eightyd);
 
