@@ -16,11 +16,11 @@ export class DemoComponent implements OnInit {
   ngOnInit() {
   }
 
-  submit(): void {
+  submit() {
     this.myloginService.submit(this.mylogin)
-     .subscribe((data) => {
-       alert('success');
-    });
+  
   }
+
+  
 
 }

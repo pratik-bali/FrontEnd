@@ -1,6 +1,6 @@
 .img14 {
-    background-image: url("../../img/header/14.jpg");  
-} 
+    background-image: url("../../img/header/14.jpg");
+}
 
 .header-intro {
     display: table;
@@ -54,7 +54,7 @@
   
   .header-introhalf .header-intro-body {
     padding: 150px 0 110px; }
-  
+
   .landing .header-intro-body {
     position: absolute;
     background: transparent; }
@@ -69,7 +69,7 @@
     height: 100%;
     z-index: -9; 
 }
-  
+
   .header-intro .header-intro-body .brand-heading {
     font-size: 40px;
     font-weight: 800;
