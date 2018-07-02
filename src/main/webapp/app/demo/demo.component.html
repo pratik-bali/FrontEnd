@@ -1,18 +1,62 @@
 <p>
- This is Demo
-</p>
-<form>
-  <div class="form-group">
-    <label for="username">Username</labe>
-    <input type="email" class="form-control" id="username" placeholder="Enter username" 
-    [(ngModel)]="mylogin.username" [ngModelOptions]="{standalone: true}">
-  </div>
-
-  <div class="form-group">
-    <label for="pass">Password</label>
-    <input type="password" class="form-control" id="pass" placeholder="Password" 
-    [(ngModel)]="mylogin.password" [ngModelOptions]="{standalone: true}">
-  </div>
-
-  <button type="submit" class="btn btn-primary" (click)="submit()">Submit</button>
-</form>
+  This is Demo
+ </p>
+ <form action="submit()" method="post">
+   <div>
+   <div *ngIf="validnumber === 'false'" class="form-group">
+     <label for="mobile">Enter Your Mobile Number</label>
+     <input
+             type="number"
+             class="form-control col-md-3"
+             id="mobile"
+             placeholder="Enter Mobile Number"
+             [(ngModel)]="mylogin.mobile"
+             name="mobile"
+             value="+91"
+       >
+   </div>
+ 
+   <div *ngIf="validnumber === 'false'">
+     <a class="btn btn-primary btn-lg active" role="button" aria-pressed="true" (click)="submit()">Request OTP</a>
+   </div>
+ 
+ 
+   <div *ngIf="validnumber === 'true' && VerifyButtonClicked === 'false'" class="form-group">
+     <label for="pass">Enter OTP</label>
+     <input type="number" class="form-control" id="pass" placeholder="otp"
+     [(ngModel)]="mylogin.verifyotp" [ngModelOptions]="{standalone: true}">
+   </div>
+ 
+   <div id="recaptcha-container"></div>
+ 
+   <div *ngIf="validnumber === 'true' && VerifyButtonClicked === 'false'">
+       <a class="btn btn-primary btn-lg active" role="button" aria-pressed="true" (click)="verify()">Verify OTP</a>
+   </div>
+ 
+ <div *ngIf="VerifyButtonClicked === 'true'">
+   <div class="alert alert-success" role="alert" *ngIf="isVerify === 'true'" >
+    success
+   </div>
+   <div class="alert alert-danger" role="alert" *ngIf="isVerify === 'false'" >
+    failed
+   </div>
+ </div><br>
+ </div><br>
+ 
+ <div>
+   <div class="form-group col-md-4">
+     <label for="email" class="sr-only margin">Email address</label>
+     <input id="email" name="email" type="email" placeholder="Enter Email" name="email"
+     class="form-control input-lg margin"
+     minlength=5 maxlength=100 email required>
+   </div>
+   <div *ngIf="validnumber === 'false'">
+     <a class="btn btn-primary btn-lg active" role="button" aria-pressed="true" (click)="submit()">Request OTP</a>
+   </div>
+ </div>
+ 
+ </form>
+ 
+ <div class="mustache">
+ </div>
+ 

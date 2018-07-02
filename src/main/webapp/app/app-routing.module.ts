@@ -1,3 +1,4 @@
+import { DemoComponent } from './demo/demo.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { errorRoute, navbarRoute} from './layouts';
@@ -19,14 +20,8 @@ const LAYOUT_ROUTES = [
     medicalRoute,
     questionnaireRoute,
     ...errorRoute,
-    {
-        path: 'goalselect',
-        component: GoalSelectComponent
-    },
-    {
-        path: 'goalAdd',
-        component: GoalAddButtonComponent
-    },
+    {path: 'goalselect', component: GoalSelectComponent },
+    {path: 'goalAdd', component: GoalAddButtonComponent}
 ];
 
 @NgModule({
