@@ -11,4 +11,9 @@ export class Register {
     save(account: any): Observable<any> {
         return this.http.post(SERVER_API_URL + 'api/register', account);
     }
+
+    sendMail(email: any): Observable<any> {
+        console.log(email);
+        return this.http.post(SERVER_API_URL + 'api/mail/send-mail', email);
+    }
 }

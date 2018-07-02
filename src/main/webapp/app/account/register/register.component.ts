@@ -22,6 +22,11 @@ export class RegisterComponent implements OnInit, AfterViewInit {
     registerAccount: any;
     success: boolean;
     modalRef: NgbModalRef;
+    submitEvent = false;
+    userMailOtp;
+    systemMailOtp ;
+    VerifyButtonClicked = false;
+    isVerify = false;
 
     constructor(
         private loginModalService: LoginModalService,
@@ -41,6 +46,7 @@ export class RegisterComponent implements OnInit, AfterViewInit {
     }
 
     register() {
+        this.submitEvent = true;
         if (this.registerAccount.password !== this.confirmPassword) {
             this.doNotMatch = 'ERROR';
         } else {
@@ -49,9 +55,32 @@ export class RegisterComponent implements OnInit, AfterViewInit {
             this.errorUserExists = null;
             this.errorEmailExists = null;
             this.registerAccount.langKey = 'en';
-            this.registerService.save(this.registerAccount).subscribe(() => {
+            this.registerService.save(this.registerAccount)
+                .subscribe( (data)  => {
+                    console.log('under save component', data);
+                    this.systemMailOtp = data;
                 this.success = true;
-            }, (response) => this.processError(response));
+            }, (response) => {
+                this.processError(response);
+                console.log('responce from register : ', response);
+                }
+            );
+        }
+        console.log(this.registerAccount.email);
+        this.registerService.sendMail(this.registerAccount.email);
+    }
+
+    verify() {
+        // this.submitEvent = 'true';
+        // console.log(this.userMailOtp);
+        // console.log(this.registerAccount.email);
+        this.VerifyButtonClicked = true;
+        if (this.userMailOtp === this.systemMailOtp) {
+            console.log('success');
+            this.isVerify = true;
+        } else {
+            console.log('failed');
+            this.isVerify = false;
         }
     }
 

@@ -17,10 +17,6 @@ export class DemoComponent implements OnInit {
   }
 
   submit() {
-    this.myloginService.submit(this.mylogin)
-  
+    this.myloginService.submit(this.mylogin);
   }
-
-  
-
 }

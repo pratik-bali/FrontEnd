@@ -1,8 +1,36 @@
 <div class="image">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="alert alert-success" *ngIf="success">
-                <strong>Registration saved!</strong> Please check your email for confirmation.
+            <div  *ngIf="success">
+                <div class="alert alert-success">
+                        <strong>Registration saved!</strong> Please check your email for confirmation.
+                </div>
+                <div class="container" *ngIf="!VerifyButtonClicked">
+                    <div class="form-group" >
+                        <label for="pass">Enter OTP</label>
+                        <input type="number" class="form-control col-md-2" id="pass" placeholder="otp"
+                        [(ngModel)]="userMailOtp" [ngModelOptions]="{standalone: true}">
+                    </div>
+                    <div >
+                        <a class="btn btn-primary btn-lg active col-md-2" role="button" aria-pressed="true"
+                            (click)="verify()">Verify OTP</a>
+                    </div>
+                </div>
+    
+                <div *ngIf="VerifyButtonClicked">
+                    <div class="alert alert-danger" role="alert" *ngIf="!isVerify" >
+                         Failed! Please try again!
+                    </div>
+                    <div class="alert alert-success" role="alert" *ngIf="isVerify" >
+                         Suceess
+                    </div>
+                    <div class="alert alert-warning" role="alert" *ngIf="isVerify"  >
+                        <span>Please  </span>
+                        <a class="alert-link" (click)="openLogin()">Click here </a><span> to Sign-in to continue</span>
+                    </div>
+                </div>
+
+                
             </div>
   
               <div class="alert alert-danger" *ngIf="error">
@@ -11,7 +39,7 @@
   
               <div class="alert alert-danger" *ngIf="errorUserExists">
                   <strong>Login name already registered!</strong> Please choose another one.
-              </div>
+              </div> 
   
               <div class="alert alert-danger" *ngIf="errorEmailExists">
                   <strong>Email is already in use!</strong> Please choose another one.
