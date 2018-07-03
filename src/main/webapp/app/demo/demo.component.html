@@ -20,12 +20,13 @@
      <a class="btn btn-primary btn-lg active" role="button" aria-pressed="true" (click)="submit()">Request OTP</a>
    </div>
  
- 
-   <div *ngIf="validnumber === 'true' && VerifyButtonClicked === 'false'" class="form-group">
-     <label for="pass">Enter OTP</label>
-     <input type="number" class="form-control" id="pass" placeholder="otp"
-     [(ngModel)]="mylogin.verifyotp" [ngModelOptions]="{standalone: true}">
-   </div>
+  <div class="row">
+    <div *ngIf="validnumber === 'true' && VerifyButtonClicked === 'false'" class="form-group col-md-3">
+      <label for="pass">Enter OTP</label>
+      <input type="number" class="form-control" id="pass" placeholder="otp"
+      [(ngModel)]="mylogin.verifyotp" [ngModelOptions]="{standalone: true}">
+    </div>
+    </div>
  
    <div id="recaptcha-container"></div>
  
@@ -42,19 +43,6 @@
    </div>
  </div><br>
  </div><br>
- 
- <div>
-   <div class="form-group col-md-4">
-     <label for="email" class="sr-only margin">Email address</label>
-     <input id="email" name="email" type="email" placeholder="Enter Email" name="email"
-     class="form-control input-lg margin"
-     minlength=5 maxlength=100 email required>
-   </div>
-   <div *ngIf="validnumber === 'false'">
-     <a class="btn btn-primary btn-lg active" role="button" aria-pressed="true" (click)="submit()">Request OTP</a>
-   </div>
- </div>
- 
  </form>
  
  <div class="mustache">

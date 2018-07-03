@@ -10,18 +10,15 @@ export class MyloginService {
     constructor(private http: HttpClient) { }
 
     public submit(param) {
-        console.log(param.mobile);
-        console.log(param.otp);
-
         const template = 'Hello%20';
         const key = '220095A0cp3pZGR5b1f7397';
-        const message = 'Your%20Otp%20is%20:%20';
+        const message = 'Your%20Buckswise%20OTP%20is%20:%20';
         const sender = 'BKSWSE';
 
         // tslint:disable-next-line:max-line-length
-        const url = 'http://control.msg91.com/api/sendotp.php?template=' + template + '&otp_length=6&authkey=' + key + '&message=' + message + param.otp + '&sender=' + sender + '&mobile=' + param.mobile + '&otp=' + param.otp + '&otp_expiry=60';
+        const url = 'http://control.msg91.com/api/sendotp.php?template=' + template + '&otp_length=6&authkey=' + key + '&message=' + message + param.otp + '&sender=' + sender + '&mobile=91' + param.mobile + '&otp=' + param.otp + '&otp_expiry=60';
 
         // console.log('url :', url);
-        return this.http.post(url, key);
+        return this.http.get(url);
      }
 }
