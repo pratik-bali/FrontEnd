@@ -9,7 +9,7 @@ import {
     MutualFundComponent,
     mutualRoute,
     userprofileState
-     } from './';
+     } from '.';
 import { MutualFundService } from './assets/mutual-fund.service';
 import { AssetsService } from './assets/assets.service';
 // import { stocksRoute } from '../entities/stocks';

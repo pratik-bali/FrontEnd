@@ -1,3 +1,4 @@
+import { DashBoardModule } from './dashboard/dashboard.module';
 import './vendor.ts';
 
 import { NgModule, Injector } from '@angular/core';
@@ -42,6 +43,7 @@ import {
 } from './layouts';
 import { SuccessComponent } from './success/success.component';
 import { FailComponent } from './fail/fail.component';
+import { DraggableModule } from './demo/widget/draggable/draggable.module';
 // import { SubscriberComponent } from './subscriber/subscriber.component';
 // import { SubscribeComponent } from './subscribe/subscribe.component';
 // import { GoalComponent } from './goal/goal.component';
@@ -63,13 +65,13 @@ import { FailComponent } from './fail/fail.component';
         FormsModule,
         BsDatepickerModule.forRoot(),
         GoalModule,
-        // SubscribeModule,
-        // SubscriberModule,
         BuckswiseFrontEndPratikModule,
         BuckswiseFrontEndDemoModule,
         BuckswiseAppSheetalModule,
-        BuckswiseAppSheetalModule
-        // jhipster-needle-angular-add-module JHipster will add new module here
+        BuckswiseAppSheetalModule,
+        DraggableModule,
+
+        DashBoardModule
     ],
     declarations: [
         JhiMainComponent,
@@ -79,7 +81,7 @@ import { FailComponent } from './fail/fail.component';
         FooterComponent,
         SuccessComponent,
         FailComponent,
-        RiskComponent
+        RiskComponent,
     ],
     providers: [
         ProfileService,

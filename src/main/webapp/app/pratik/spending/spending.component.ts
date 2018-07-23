@@ -210,6 +210,7 @@ export class SpendingComponent implements OnInit {
             this.income.incomeDeposit = this.IncomeArray.incomeDeposit;
             this.income.incomeRental = this.IncomeArray.incomeRental;
             this.dynamicIncome = this.IncomeArray.dynamicIncome;
+            console.log(response);
         }
       );
       console.log('onIncomeGet() success');

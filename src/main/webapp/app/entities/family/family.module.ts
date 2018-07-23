@@ -14,7 +14,7 @@ import {
     familyRoute,
     familyPopupRoute,
     FamilyResolvePagingParams,
-} from './';
+} from '.';
 
 const ENTITY_STATES = [
     ...familyRoute,

@@ -12,7 +12,7 @@ import {
     medicalRoute,
     questionnaireRoute,
     riskRoute
-     } from './';
+     } from '.';
 
 // import { QuestionnaireComponent } from './questinnaire/questionnaire.component';
      @NgModule({

@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 
 import { BuckswiseFrontEndSharedModule } from '../shared';
 
-import { HOME_ROUTE, HomeComponent } from './';
+import { HOME_ROUTE, HomeComponent } from '.';
 import { HeaderComponent } from './header/header.component';
 import { BannerComponent } from './banner/banner.component';
 import { MainBodyComponent } from './main-body/main-body.component';

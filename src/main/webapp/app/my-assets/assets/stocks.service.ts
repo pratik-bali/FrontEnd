@@ -74,7 +74,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { SERVER_API_URL } from '../../app.constants';
-import { Stocks } from '../assets/stocks.model';
+import { Stocks } from './stocks.model';
 
 @Injectable()
 export class StocksService {

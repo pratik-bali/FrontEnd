@@ -12,7 +12,7 @@ import { MainComponent,
     TaxComponent,
     taxRoute,
     sheetalState,
-} from './';
+} from '.';
 import { FormsModule } from '@angular/forms';
 import { GrossService } from './main/Services/gross.service';
 import { MeetService } from './requestmeeting/meet.service';

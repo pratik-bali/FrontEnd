@@ -3,17 +3,19 @@ import { RouterModule } from '@angular/router';
 import { BuckswiseFrontEndSharedModule } from '../shared';
 
 import { DemoComponent } from './demo.component';
-import { DemoRoute } from './demo.route';
+import { DemoRoutingModule } from './demo-routing.module';
 import { MyloginService } from './mylogin.service';
+import { WidgetModule } from './widget/widget.module';
 
 @NgModule({
     imports: [
         BuckswiseFrontEndSharedModule,
-        RouterModule.forChild([DemoRoute])
-    ],
+        DemoRoutingModule,
+        WidgetModule
+        ],
     declarations: [
-        DemoComponent,
-    ],
+        DemoComponent
+        ],
     entryComponents: [
     ],
     providers: [

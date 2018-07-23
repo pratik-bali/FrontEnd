@@ -11,7 +11,7 @@ import { GoalselectService } from './goal-select/goalselect.service';
 import {
     GoalComponent,
     goalRoot,
-} from './';
+} from '.';
 import { GoalAddButtonComponent } from './goal-add-button/goal-add-button.component';
 import { GoalSelectComponent } from './goal-select/goal-select.component';
 import { CommonModule } from '@angular/common';

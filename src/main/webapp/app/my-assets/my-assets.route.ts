@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 
-import { mutualRoute, upRoute } from './';
+import { mutualRoute, upRoute } from '.';
 const UP_ROUTES = [
    mutualRoute,
    upRoute

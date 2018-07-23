@@ -5,7 +5,7 @@ import {
   contactRoute,
   meetRoute,
   taxRoute
-  } from './';
+  } from '.';
 
 const SHEETAL_ROUTE = [
   mainRoute,

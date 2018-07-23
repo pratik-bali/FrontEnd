@@ -15,7 +15,7 @@
 import { Route } from '@angular/router';
 
 import { UserRouteAccessService } from '../shared';
-import { GoalComponent } from './';
+import { GoalComponent } from '.';
 // import { GoalSelectComponent } from './Goal-select/goalselect.component';
 
 export const goalRoot: Route = {
