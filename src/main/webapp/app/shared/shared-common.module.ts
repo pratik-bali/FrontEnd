@@ -7,7 +7,7 @@ import {
     BuckswiseFrontEndSharedLibsModule,
     JhiAlertComponent,
     JhiAlertErrorComponent
-} from '.';
+} from './';
 
 @NgModule({
     imports: [

@@ -1,7 +1,6 @@
 {
   "name": "BuckswiseFrontEnd",
   "short_name": "BuckswiseFrontEnd",
-
   "icons": [
       {
           "src": "./content/images/logo-jhipster.png",
@@ -29,5 +28,4 @@
   "start_url": "/index.html",
   "display": "standalone",
   "orientation": "portrait"
-  
 }

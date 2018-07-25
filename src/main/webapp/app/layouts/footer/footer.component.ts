@@ -2,9 +2,6 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'jhi-footer',
-    templateUrl: './footer.component.html',
-    styleUrls: [
-        '../../css/universal.css'
-    ]
+    templateUrl: './footer.component.html'
 })
 export class FooterComponent {}
